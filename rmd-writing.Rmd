@@ -1,0 +1,128 @@
+---
+title: "Rmarkdown写作注意事项"
+author: "马忠芸 整理"
+date: 2018-1-11
+output:
+  html_document: 
+    css: markdown.css
+    fig_caption: yes
+    keep_md: yes
+    number_sections: yes
+    theme: null
+  word_document: default
+  pdf_document: default
+---
+
+
+
+# 写作准备
+每次写之前，以下语法是不变的，表示设定了具体的环境和规则，只需改变title和author即可。
+
+1. 不引用参考文献
+
+```
+---
+title: "中国经济增长短期预测"
+author: "李研"
+output:
+	pdf_document:
+		keep_tex: yes
+		latex_engine: xelatex
+		pandoc_args: --listings
+	html_document:
+	number_sections: yes
+	toc: yes
+	word_document: default
+---
+```
+
+
+2. 引入参考文献
+
+```
+---
+title: "基于高频数据的 VaR 计算比较研究"
+author: "马"
+date: "2017/12/21"
+output:
+	pdf_document:
+		keep_tex: yes
+		latex_engine: xelatex
+		pandoc_args: --listings
+	html_document:
+		number_sections: yes
+	word_document: default
+csl: chinese-gb7714-2005-numeric.csl
+bibliography: new.bib
+---
+```
+
+3. 开头固定格式
+
+```{r eval=F}
+rm(list=ls())
+options(digits=5)
+options(scipen=5)
+graphics.off()
+path <- "E:/mc/mc/" 
+setwd(path)
+#Sys.setlocale('LC_ALL','C') 
+Sys.setlocale("LC_ALL", "Chinese")
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+主要内容包含：设置路径、设置中文显示问题，但加载包放在后面具体实施部分，不需要放在此处
+
+# 文本注意事项
+
+1. **摘要**表示“摘要”加粗, *李研* 表示“李研”斜体
+2. \# 实证分析表示一级标题，且#和引言之间有一个空格, \#\# 数据准备 表示二级标题, \#\#\# 数据及数据来源 表示三级标题,······, \#\#\#\#\#\# 最多六个#，表示最小的字体
+3. 一对美元符号 \$x\$ 表示行内公式，左右各空一格,  \$\$x+y\$\$ 两对美元符号表示行间公式，可以往后空一格再进行写作
+ 
+# 代码注意事项
+ 
+1. \`r `表示行内计算，直接输入计算公式即可出结果
+2.
+
+~~~~
+\```{r eval=T,echo=F,error=T,warning=F,message=FALSE,comment="",results='asis'}
+
+\```
+~~~~
+
+上述表示写R代码，error=T表示可以存在错误，warning=F表示不要警告信息，message=F表示不要警告信息，comment=”“表示不出现警告信息
+
+
+3. `dev=c('png', 'CairoPDF')` #执行pdf时输出图片，图片名可以是中文，不会报错，但只能用于pdf，在最开的` ```{r }```` `中加，下面代码中的画图参数要写`family="SimSun"`，表示字体为宋体，执行结果是文字，高清图`dev=c('png')`#执行任何文件都可以加上，但是只能输出图片，不是文字，会模糊
+
+4. 引用参考文献一共加四句话： 
+```
+csl: chinese-gb7714-2005-numeric.csl #文件（固定格式）
+bibliography: baidu.bib #文件（baidu.bib可以改，改成自己参考的文献）自己构建的，是文本文件
+# 参考文献
+[//]: # (\bibliography{new}) #放在结尾，表示参考文献，new可根据自己的名称修改
+```
+文章中的上标[1]用[@ ] #空格用notepad++打开.bib文件中的文章复制粘贴, .bib文件自己在百度学术中搜索，导出为.bib文件
+
+5. `data.frame(a1,a2,a3)`#支持不同类型数据，数值部分不会转化成文本，仍然是数值，可以控制小数点位数;	`cbind(a1,a2,a3)`#支持同类型的数据，cbind执行的结果如果在有文字的前提下都会转化文本
+
+6. 只提取代码： 
+```{r eval=F}
+library(knitr)
+setwd(“path”) ##.rmd所在的路径,具体使用时换为包含你的RMD文件的文件夹 
+purl("stata.rmd", encoding="utf-8") ##stata具体使用时换为要用的RMD文件名,这样可以导出所有rmd里面的程序
+```
+7. `kable` 用来制作表格，可以在里面给表格增加名称等（需要加载knitr包）
+
+# 编码注意事项
+
+1. 行间公式后空一行，行内公式、代码前后各空一格（行）
+2.	worktools文件包含内容：everything notepad++ rstudio telive PathEditor 两个环境变量
+3. 程序、路径、文件名少用中文，要用UTF-8编码
+4. 尽量将程序的路径单独用一个变量表示出来，放在最前面
+5. 不要轻易尝试直接在rstutio中复制，先复制到notepad++（**只支持文本**）再复制
+6. 文件备份：default .tex
+7. 三个软件链接：
+	1. https://elearningindustry.com/12-best-free-online-bibliography-and-citation-tools
+	2. http://www.jabref.org/
+	3. http://download1.rstudio.org/RStudio-0.99.903.zip
