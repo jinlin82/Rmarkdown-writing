@@ -33,6 +33,12 @@ csl: ./style/chinese-gb7714-2005-numeric.csl
 link-citations: true
 ---
 
+**TODO**
+
+- [ ] 1. 表格出不来
+- [ ] 2. Bib文件如何整理
+- [ ] 3. 把1、等改成1. ，以变成 markdown list
+
 # 写作准备
 
 每次写之前，以上头文件是不变的，表示设定了具体的环境和规则，只能改变title、author和date。
