@@ -146,9 +146,9 @@ bibliography: baidu.bib #文件（baidu.bib可以改，改成自己参考的文�
 
 6. 只提取代码： 
 ```{r eval=F}
-library(knitr)
-setwd(“path”) ##.rmd所在的路径,具体使用时换为包含你的RMD文件的文件夹 
-purl("stata.rmd", encoding="utf-8") ##stata具体使用时换为要用的RMD文件名,这样可以导出所有rmd里面的程序
+#library(knitr)
+#setwd(“path”) ##.rmd所在的路径,具体使用时换为包含你的RMD文件的文件夹 
+#purl("stata.rmd", encoding="utf-8") ##stata具体使用时换为要用的RMD文件名,这样可以导出所有rmd里面的程序
 ```
 
 7. `kable` 用来制作表格，可以在里面给表格增加名称等（需要加载knitr包）
@@ -233,20 +233,25 @@ Project directory name输入项目名字（一般写入项目链接后会自动�
 
 6、如果push的时候，remote已经修改，两个修改不一致则会产生冲突，这时需要重新pull并手工解决冲突后
 再按照push步骤提交（此时，pull的最新版本会出现“<<<<<< ====== >>>>>>”这三个符号标记的内容，
-解决冲突可以其他内容，将这三个符号及其后面紧跟的内容删掉即可）
+解决冲突可以同时保留其他内容，此时只需将这三个符号及其后面紧跟的内容删掉即可）
 
 注：
 1、在编写Rmd时，要使用相对路径，不能使用绝对路径，因为绝对路径只有在自己电脑上才可以运行，
 相对路径大家都可以运行。
 2、在编写markdown时，需要手动换行，大概80个字符或40个汉字左右的时候可以换一行，编辑窗口
 左下角可以看到字符数，碰到标点符号或者行内公式，保持在一行。
+3、每次提交之前切忌把全部内容剪切复制，否则无法知晓真正改动内容。
 
 # Equalx的设置和用法
 
 下载Equalx，打开equalx.exe，菜单栏点击edit→prefrences→Advanced，点击pdflatex后的change，
 找到pdflatex.exe所在的路径（基本为：./texlive/2014/bin/win32/pdflatex.exe，.表示texlive所在的路径，
 注：装Equalx之前需要下载texlive），之后点击ghostscript后的change，找到gswin32c.exe所在
-的路径（注：修改之前需要下载gs）
+的路径（注：修改之前需要下载gs）,如图\@ref(fig:fig1) 所示。
+
+```{r fig1,eval=T, echo=F,fig.cap="Equalx安装",dev="png",results='markup', cache=F}
+knitr::include_graphics(".\\results\\Equalx安装.png")
+```
 
 edit→prefrences→editor，family选择Consolas，size选择14，字体可以调大一点
 
@@ -259,7 +264,15 @@ edit→prefrences→Preview，Automatic after □ milliseconds，□中输入500
 
 # Mathtype的设置和用法
 
+1、首先下载mathtype，将其嵌套到word中去，操作成功之后word菜单栏会出现mathtype；
+2、点击mathtype中的convert equations,设置相关属性，勾选Equation Type to convert模块的前两
+项和第四项，Range模块的“whole document”,在Convert equation to模块下的“Text using MathType translator”
+选择“LaTex 2.09 and lator”，如图 \@ref(fig:fig2) 所示，设置完成以后点击convert就能将word
+文档中的公式转化为LaTex公式。
 
+```{r fig2,eval=T, echo=F,fig.cap="Mathtype安装",dev="png",results='markup', cache=F}
+knitr::include_graphics(".\\results\\Mathtype安装.png")
+```
 
 # 参考文献
 [//]: # (\bibliography{Bibfile})

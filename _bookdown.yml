@@ -1,0 +1,20 @@
+language:
+  label:
+    fig: '图 '
+    tab: '表 '
+    eq: 'Equation '
+    thm: 'Theorem '
+    lem: 'Lemma '
+    cor: 'Corollary '
+    prp: 'Proposition '
+    cnj: 'Conjecture '
+    def: 'Definition '
+    exm: 'Example '
+    exr: 'Exercise '
+    proof: 'Proof. '
+    remark: 'Remark. '
+    solution: 'Solution. '
+  ui:
+    edit: Edit
+    chapter_name: ''
+    
