@@ -275,6 +275,7 @@ edit→prefrences→Preview，Automatic after □ milliseconds，□中输入500
 项和第四项，Range模块的“whole document”,在Convert equation to模块下的“Text using MathType translator”
 选择“LaTex 2.09 and lator”，如图 \@ref(fig:fig2) 所示，设置完成以后点击convert就能将word
 文档中的公式转化为LaTex公式。
+注：若安装不成功，卸掉重新安装mathtype
 
 ```{r fig2,eval=T, echo=F,fig.cap="Mathtype安装",dev="png",results='markup', cache=F}
 knitr::include_graphics(".\\results\\Mathtype安装.png")
