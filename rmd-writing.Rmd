@@ -90,9 +90,9 @@ link-citations: true
 ```
 
 注：
-1、每次写作之前，.Rmd、.yml和style文件及其里面所有的文件都要放在一起，
+1. 每次写作之前，.Rmd、.yml和style文件及其里面所有的文件都要放在一起，
 .yml和style文件夹可以从老的项目中拷过来。
-2、参考文献中Bibfile与头文件中的bibliography:Bibfile.bib中的Bibfile对应，
+2. 参考文献中Bibfile与头文件中的bibliography:Bibfile.bib中的Bibfile对应，
 需要自己建立Bibfile.bib文件，与其他所有文件放在一起。
 
 3. 开头固定格式
@@ -171,9 +171,9 @@ $$y=ax+b$$ {#eq:model1}
 9. 图表编号例子
 
 ```{r tab1, eval=T, echo=F, results='markup', cache=F}
-#tab1<-read.csv(".\\result\\指标体系明细表.csv")     ###""内为表格所在路径，因为此处没有具体表格输入，因此将其注释掉
-#knitr::kable(tab1, row.names =F, align = "l", caption="指标体系明细表",
-#     longtable = TRUE, booktabs = TRUE, linesep  = "")
+tab1<-read.csv(".\\results\\指标体系明细表.csv")     
+knitr::kable(tab1, row.names =F, align = "l", caption="指标体系明细表",
+     longtable = TRUE, booktabs = TRUE, linesep  = "")
 ```
 
 在表\@ref(tab:tab1)中，即可在输出的文档中显示表的序号。此处\@ref(tab: )是固定的，
@@ -210,54 +210,57 @@ tab1根据自己上面程序中```{r tab1}中r后的tab1确定名称
 输入git.exe所在路径，点击ok
 
 按下快捷键win+R，在弹出的窗口中输入CMD，之后在弹出的窗口中输入：
+
 git config --global user.email "380906952@qq.com"
+
 git config --global user.name "Zeng Yuanzheng"
+
 （注：引号里改为自己的邮箱和名字，名字用汉语拼音写）
 
 ## 把本地文件夹用git控制并push到Github的步骤
 
-1、使用Github网页操作：网页中建立项目。把需要版本控制的文件上传到项目中，然后再把项目clone到文件夹中。
+1. 使用Github网页操作：网页中建立项目。把需要版本控制的文件上传到项目中，然后再把项目clone到文件夹中。
 
-2、使用git命令操作，可以在Terminal运行git命令。
+2. 使用git命令操作，可以在Terminal运行git命令。
 
 ## 合作者步骤
 
-1、repository owner向合作者发出邀请（repository setting）
+1. repository owner向合作者发出邀请（repository setting）
 
-2、被邀请者在网页（https://github.com/username/reponame/invitations) 接受邀请，成为合作者
+2. 被邀请者在网页（https://github.com/username/reponame/invitations) 接受邀请，成为合作者
 （注：uername为帐户名，reponame为项目名）
 
-3、合作者clone owner的repository到本地repository，具体操作为：
+3. 合作者clone owner的repository到本地repository，具体操作为：
 
 在Rstudio中，点击file→new project→version control→git，在弹出的对话框中，Repository URL输入项目链接，
 Project directory name输入项目名字（一般写入项目链接后会自动生成），Create project as subdirectory of
 中输入自己电脑上要把项目保存的位置，点击Create Project，项目创建完毕。之后会在Rstudio右下角
 显示出项目里的所有内容。
 
-4、打开项目中的.Rmd，对文件中的内容进行修改（Modified），修改完之后点击保存（Save），在git图标下
+4. 打开项目中的.Rmd，对文件中的内容进行修改（Modified），修改完之后点击保存（Save），在git图标下
 点击commit，在弹出的窗口中，左上角勾选刚刚修改的Rmd文件，右上角登记修改的内容（比如，在Rmd中修改
 了图片，写入modify figures即可），点击commit，之后push
 
-5、重新开始工作时，在git图标中点击pull，到最新版本
+5. 重新开始工作时，在git图标中点击pull，到最新版本
 
-6、如果push的时候，remote已经修改，两个修改不一致则会产生冲突，这时需要重新pull并手工解决冲突后
+6. 如果push的时候，remote已经修改，两个修改不一致则会产生冲突，这时需要重新pull并手工解决冲突后
 再按照push步骤提交（此时，pull的最新版本会出现“<<<<<< ====== >>>>>>”这三个符号标记的内容，
 解决冲突可以同时保留其他内容，此时只需将这三个符号及其后面紧跟的内容删掉即可）
 
 注：
-1、在编写Rmd时，要使用相对路径，不能使用绝对路径，因为绝对路径只有在自己电脑上才可以运行，
+1. 在编写Rmd时，要使用相对路径，不能使用绝对路径，因为绝对路径只有在自己电脑上才可以运行，
 相对路径大家都可以运行。
-2、在编写markdown时，需要手动换行，大概80个字符或40个汉字左右的时候可以换一行，编辑窗口
+2. 在编写markdown时，需要手动换行，大概80个字符或40个汉字左右的时候可以换一行，编辑窗口
 左下角可以看到字符数，碰到标点符号或者行内公式，保持在一行。
-3、每次提交之前切忌把全部内容剪切复制，否则无法知晓真正改动内容。
+3. 每次提交之前切忌把全部内容剪切复制，否则无法知晓真正改动内容。
 
 # todo
 
 ## Bib文件如何整理
 
-1.下载Jabref
+1. 下载Jabref
 
-2.下载的Jabref文件是英文版的，可通过option-preference-general将Jabref环境设置为中文，即language
+2. 下载的Jabref文件是英文版的，可通过option-preference-general将Jabref环境设置为中文，即language
 右侧框中将E"nglish"改为"simplified Chinese",如图 \@ref(fig:fig1) 所示。此步骤可忽略。
 
 ```{r fig1,eval=T, echo=F,fig.cap="语言设置",dev="png",results='markup', cache=F}
@@ -265,9 +268,9 @@ knitr::include_graphics(".\\results\\语言设置.png")
 ```
 
 
-3.点击左上角的"File-New bibtex library"即可建立新的bib文件。
+3. 点击左上角的"File-New bibtex library"即可建立新的bib文件。
 
-4.设置bibtexkey: bibtexkey是文献条目的标识，每篇文献都有唯一的bibtexkey;打开options菜单的preference,
+4. 设置bibtexkey: bibtexkey是文献条目的标识，每篇文献都有唯一的bibtexkey;打开options菜单的preference,
 点击弹出窗口左边的"bib tex key generator"，在第一项"default pattern"可以设置bibtexkey,图 \@ref(fig:fig2) 
 显示设置[auto]-[year]-p[firstpage]-[lastpage],分别表示”第一作者-年-p文章首页-文章末页”。
 
@@ -276,7 +279,7 @@ knitr::include_graphics(".\\results\\bibtexkey设置.png")
 ```
 
 
-5.设置文献题录的显示：图 \@ref(fig:fig3) 显示了该bib文件的文献题录，即图中红色框所示内容，为了使界面
+5. 设置文献题录的显示：图 \@ref(fig:fig3) 显示了该bib文件的文献题录，即图中红色框所示内容，为了使界面
 表格简洁，可通过options-preference-entry table columns适当删掉不必要的选项，如图 \@ref(fig:fig4) 所示，如要删掉journal,
 只需选中"journal"框以后点击右侧的"-"即可，同样点击"+"也可增加题录显示内容。
 
@@ -289,7 +292,7 @@ knitr::include_graphics(".\\results\\文献题录显示设置.png")
 ```
 
 
-6.新建bib文件以后，点击菜单栏中的"+"即可新增一条记录，出现图 \@ref(fig:fig5) 所示的对话框，下面以增加
+6. 新建bib文件以后，点击菜单栏中的"+"即可新增一条记录，出现图 \@ref(fig:fig5) 所示的对话框，下面以增加
 "加权马尔科夫AR_GARCH_GED模型在降水量中的预测"为例，进行说明，由于该文章属于期刊论文，故选择"Article",
 点击generate进入到下一步,如图 \@ref(fig:fig6) 所示分别输入作者，题目，期刊，年份之后，jabref界面就会
 出现图 \@ref(fig:fig7) 中对应的文章，也可以直接点击"{}Bibtex source",将图 \@ref(fig:fig9) 中内容直接复制
@@ -308,7 +311,7 @@ knitr::include_graphics(".\\results\\文献信息生成.png")
 ```
 
 
-7.第4步中设置的bibtexkey此时还未起作用，需要手动更新：点击其中一条文献，然后按crtl+A全选，点击tool-autogenerate bib tex key,或者直接点击图 \@ref(fig:fig8) 菜单栏中的"钥匙"，则全部bibtexkey都得到更新。
+7. 第4步中设置的bibtexkey此时还未起作用，需要手动更新：点击其中一条文献，然后按crtl+A全选，点击tool-autogenerate bib tex key,或者直接点击图 \@ref(fig:fig8) 菜单栏中的"钥匙"，则全部bibtexkey都得到更新。
 
 ```{r fig8,eval=T, echo=F,fig.cap="钥匙",dev="png",results='markup', cache=F}
 knitr::include_graphics(".\\results\\钥匙.png")
@@ -348,8 +351,8 @@ edit→prefrences→Preview，Automatic after □ milliseconds，□中输入500
 
 # Mathtype的设置和用法
 
-1、首先下载mathtype，将其嵌套到word中去，操作成功之后word菜单栏会出现mathtype；
-2、点击mathtype中的convert equations,设置相关属性，勾选Equation Type to convert模块的前两
+1. 首先下载mathtype，将其嵌套到word中去，操作成功之后word菜单栏会出现mathtype；
+2. 点击mathtype中的convert equations,设置相关属性，勾选Equation Type to convert模块的前两
 项和第四项，Range模块的“whole document”,在Convert equation to模块下的“Text using MathType translator”
 选择“LaTex 2.09 and lator”，如图 \@ref(fig:fig12) 所示，设置完成以后点击convert就能将word
 文档中的公式转化为LaTex公式。
