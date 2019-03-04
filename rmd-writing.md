@@ -35,9 +35,10 @@ link-citations: true
 
 **TODO**
 
-- [ ] 1. 表格出不来
-- [ ] 2. Bib文件如何整理
-- [ ] 3. 把1、等改成1. ，以变成 markdown list
+- [x] 1. 表格出不来
+- [x] 2. Bib文件如何整理
+- [x] 3. 把1、等改成1. ，以变成 markdown list
+- [ ] bibtexkey设置.png 调整
 
 
 # 写作准备
@@ -268,7 +269,7 @@ Project directory name输入项目名字（一般写入项目链接后会自动�
 3. 点击左上角的"File-New bibtex library"即可建立新的bib文件。
 4. 设置bibtexkey: bibtexkey是文献条目的标识，每篇文献都有唯一的bibtexkey;打开options菜单的preference,
 点击弹出窗口左边的"bib tex key generator"，在第一项"default pattern"可以设置bibtexkey,图 \@ref(fig:fig2) 
-显示设置[auto]-[year]-p[firstpage]-[lastpage],分别表示”第一作者-年-p文章首页-文章末页”。
+显示设置 `[auto][year]` ,分别表示”第一作者-年-p文章首页-文章末页”。
 
 <div class="figure">
 <img src=".\results\bibtexkey设置.png" alt="bibtexkey设置"  />
