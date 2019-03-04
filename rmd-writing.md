@@ -11,7 +11,7 @@ output:
     theme: null
     md_extensions: +east_asian_line_breaks
     keep_md: true
-    toc: false
+    toc: true
     pandoc_args: ["--filter", "pandoc-crossref", "-M", "eqnPrefix="]
   bookdown::word_document2:
     fig_caption: true
@@ -255,6 +255,19 @@ Project directory name输入项目名字（一般写入项目链接后会自动�
 3. 每次提交之前切忌把全部内容剪切复制，否则无法知晓真正改动内容。
 
 # Bib文件如何整理
+## 参考文献管理软件 Jabref
+### 功能
+    1. 能够导入其他格式参考文献文件为bib
+    2. 自动生成 key
+    3. 排序，查看等
+### 安装
+    1. 保证电脑上存在 Java 虚拟机 JRE 1.8 版本以上，移动版时设置 java 环境变量
+    2. 可 portable 使用
+### 知网文献导入步骤
+    1. 知网查找文献后导出为 Endnote 格式（.txt 文件）
+    2. Jabref Import 选择默认(所有格式)
+    3. remove duplicates
+    4. 选择所有条目， 自动生成 bibtex key, 保存bib文件
 
 1. 下载Jabref
 2. 下载的Jabref文件是英文版的，可通过option-preference-general将Jabref环境设置为中文，即language
