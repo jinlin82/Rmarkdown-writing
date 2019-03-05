@@ -261,26 +261,28 @@ knitr::include_graphics(".\\results\\知网.png")
     3. remove duplicates
     4. 选择所有条目， 自动生成 bibtex key, 保存bib文件
 ### Jabref操作
-    在Jabref导入包含参考文献的txt文件后，可以根据个人需要进行相关设置。
-    1. 点击左上角的"File-New bibtex library"即可建立新的bib文件。
-    2. 下载的Jabref文件是英文版的，可通过option-preference-general将Jabref环境设置为中文，即language
-    右侧框中将E"nglish"改为"simplified Chinese",如图 \@ref(fig:fig2) 所示。此步骤可忽略。
+
+在Jabref导入包含参考文献的txt文件后，可以根据个人需要进行相关设置。
+
+1. 点击左上角的"File-New bibtex library"即可建立新的bib文件。
+2. 下载的Jabref文件是英文版的，可通过option-preference-general将Jabref环境设置为中文，即language
+右侧框中将E"nglish"改为"simplified Chinese",如图 \@ref(fig:fig2) 所示。此步骤可忽略。
 
 ```{r fig2,eval=T, echo=F,fig.cap="语言设置",dev="png",results='markup', cache=F}
 knitr::include_graphics(".\\results\\语言设置.png")
 ```
 
-    3. 设置bibtexkey: bibtexkey是文献条目的标识，每篇文献都有唯一的bibtexkey;打开options菜单的preference,
-    点击弹出窗口左边的"bib tex key generator"，在第一项"default pattern"可以设置bibtexkey,图 \@ref(fig:fig3) 
-    显示设置 `[auto][year]p[firstpage][lastpage]` ,分别表示”第一作者-年-p文章首页-文章末页”。
+3. 设置bibtexkey: bibtexkey是文献条目的标识，每篇文献都有唯一的bibtexkey;打开options菜单的preference,
+点击弹出窗口左边的"bib tex key generator"，在第一项"default pattern"可以设置bibtexkey,图 \@ref(fig:fig3) 
+显示设置 `[auto][year]p[firstpage][lastpage]` ,分别表示”第一作者-年-p文章首页-文章末页”。
 
 ```{r fig3,eval=T, echo=F,fig.cap="bibtexkey设置",dev="png",results='markup', cache=F}
 knitr::include_graphics(".\\results\\bibtexkey设置.png")
 ```
 
-    4. 设置文献题录的显示：图 \@ref(fig:fig4) 显示了该bib文件的文献题录，即图中红色框所示内容，为了使界面
-    表格简洁，可通过options-preference-entry table columns适当删掉不必要的选项，如图 \@ref(fig:fig5) 所示，
-    如要删掉journal,只需选中"journal"框以后点击右侧的"-"即可，同样点击"+"也可增加题录显示内容。
+4. 设置文献题录的显示：图 \@ref(fig:fig4) 显示了该bib文件的文献题录，即图中红色框所示内容，为了使界面
+表格简洁，可通过options-preference-entry table columns适当删掉不必要的选项，如图 \@ref(fig:fig5) 所示，
+如要删掉journal,只需选中"journal"框以后点击右侧的"-"即可，同样点击"+"也可增加题录显示内容。
 
 ```{r fig4,eval=T, echo=F,fig.cap="文献题录",dev="png",results='markup', cache=F}
 knitr::include_graphics(".\\results\\文献题录.png")
@@ -290,12 +292,12 @@ knitr::include_graphics(".\\results\\文献题录.png")
 knitr::include_graphics(".\\results\\文献题录显示设置.png")
 ```
 
-    5. 相关设置完成之后，点击菜单栏中的"+"即可新增一条记录，出现图 \@ref(fig:fig6) 所示的对话框，下面以增加
-    "加权马尔科夫AR_GARCH_GED模型在降水量中的预测"为例，进行说明，由于该文章属于期刊论文，故选择"Article",
-    点击generate进入到下一步,如图 \@ref(fig:fig7) 所示分别输入作者，题目，期刊，年份之后，jabref界面就会
-    出现图 \@ref(fig:fig8) 中对应的文章，也可以直接点击"{}Bibtex source",将图 \@ref(fig:fig9) 中内容直接复制
-    到其对应的条框中,pages信息在optional fields选项下填写。（注：在百度学术搜索出文章以后，点击"引用-bibtex"，
-    即可出现如图 \@ref(fig:fig9)所示的内容）
+5. 相关设置完成之后，点击菜单栏中的"+"即可新增一条记录，出现图 \@ref(fig:fig6) 所示的对话框，下面以增加
+"加权马尔科夫AR_GARCH_GED模型在降水量中的预测"为例，进行说明，由于该文章属于期刊论文，故选择"Article",
+点击generate进入到下一步,如图 \@ref(fig:fig7) 所示分别输入作者，题目，期刊，年份之后，jabref界面就会
+出现图 \@ref(fig:fig8) 中对应的文章，也可以直接点击"{}Bibtex source",将图 \@ref(fig:fig9) 中内容直接复制
+到其对应的条框中,pages信息在optional fields选项下填写。（注：在百度学术搜索出文章以后，点击"引用-bibtex"，
+即可出现如图 \@ref(fig:fig9)所示的内容）
 
 ```{r fig6,eval=T, echo=F,fig.cap="新增bib文件",dev="png",results='markup', cache=F}
 knitr::include_graphics(".\\results\\新增bib文件.png")
@@ -313,8 +315,8 @@ knitr::include_graphics(".\\results\\文献信息生成.png")
 knitr::include_graphics(".\\results\\百度学术.png")
 ```
 
-    6. 第3步中设置的bibtexkey此时还未起作用，需要手动更新：点击其中一条文献，然后按crtl+A全选，点击tool-autogen
-    erate bib tex key,或者直接点击图 \@ref(fig:fig10) 菜单栏中的"钥匙"，则全部bibtexkey都得到更新。
+6. 第3步中设置的bibtexkey此时还未起作用，需要手动更新：点击其中一条文献，然后按crtl+A全选，点击tool-autogen
+erate bib tex key,或者直接点击图 \@ref(fig:fig10) 菜单栏中的"钥匙"，则全部bibtexkey都得到更新。
 
 ```{r fig10,eval=T, echo=F,fig.cap="钥匙",dev="png",results='markup', cache=F}
 knitr::include_graphics(".\\results\\钥匙.png")

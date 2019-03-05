@@ -264,86 +264,88 @@ Project directory name输入项目名字（一般写入项目链接后会自动�
 ### 安装
     1. 保证电脑上存在 Java 虚拟机 JRE 1.8 版本以上，移动版时设置 java 环境变量
     2. 可 portable 使用
+    3. 下载Jabref
 ### 知网文献导入步骤
-    1. 知网查找文献后导出为 Endnote 格式（.txt 文件）
+    1. 知网查找文献后导出为 Endnote格式（.txt文件），见图 \@ref(fig:fig1) 。(注：不要复制到剪贴板以后再新
+    建txt文件，这样导入到jabref后会乱码；通过txt文件可以同时导入多条参考文献)
+    
+<div class="figure">
+<img src=".\results\知网.png" alt="知网"  />
+<p class="caption">(\#fig:fig1)知网</p>
+</div>
+
     2. Jabref Import 选择默认(所有格式)
     3. remove duplicates
     4. 选择所有条目， 自动生成 bibtex key, 保存bib文件
+### Jabref操作
 
-1. 下载Jabref
+在Jabref导入包含参考文献的txt文件后，可以根据个人需要进行相关设置。
+
+1. 点击左上角的"File-New bibtex library"即可建立新的bib文件。
 2. 下载的Jabref文件是英文版的，可通过option-preference-general将Jabref环境设置为中文，即language
-右侧框中将E"nglish"改为"simplified Chinese",如图 \@ref(fig:fig1) 所示。此步骤可忽略。
+右侧框中将E"nglish"改为"simplified Chinese",如图 \@ref(fig:fig2) 所示。此步骤可忽略。
 
 <div class="figure">
 <img src=".\results\语言设置.png" alt="语言设置"  />
-<p class="caption">(\#fig:fig1)语言设置</p>
+<p class="caption">(\#fig:fig2)语言设置</p>
 </div>
 
-
-3. 点击左上角的"File-New bibtex library"即可建立新的bib文件。
-4. 设置bibtexkey: bibtexkey是文献条目的标识，每篇文献都有唯一的bibtexkey;打开options菜单的preference,
-点击弹出窗口左边的"bib tex key generator"，在第一项"default pattern"可以设置bibtexkey,图 \@ref(fig:fig2) 
-显示设置 `[auto][year]` ,分别表示”第一作者-年-p文章首页-文章末页”。
+3. 设置bibtexkey: bibtexkey是文献条目的标识，每篇文献都有唯一的bibtexkey;打开options菜单的preference,
+点击弹出窗口左边的"bib tex key generator"，在第一项"default pattern"可以设置bibtexkey,图 \@ref(fig:fig3) 
+显示设置 `[auto][year]p[firstpage][lastpage]` ,分别表示”第一作者-年-p文章首页-文章末页”。
 
 <div class="figure">
 <img src=".\results\bibtexkey设置.png" alt="bibtexkey设置"  />
-<p class="caption">(\#fig:fig2)bibtexkey设置</p>
+<p class="caption">(\#fig:fig3)bibtexkey设置</p>
 </div>
 
-
-5. 设置文献题录的显示：图 \@ref(fig:fig3) 显示了该bib文件的文献题录，即图中红色框所示内容，为了使界面
-表格简洁，可通过options-preference-entry table columns适当删掉不必要的选项，如图 \@ref(fig:fig4) 所示，如要删掉journal,
-只需选中"journal"框以后点击右侧的"-"即可，同样点击"+"也可增加题录显示内容。
+4. 设置文献题录的显示：图 \@ref(fig:fig4) 显示了该bib文件的文献题录，即图中红色框所示内容，为了使界面
+表格简洁，可通过options-preference-entry table columns适当删掉不必要的选项，如图 \@ref(fig:fig5) 所示，
+如要删掉journal,只需选中"journal"框以后点击右侧的"-"即可，同样点击"+"也可增加题录显示内容。
 
 <div class="figure">
 <img src=".\results\文献题录.png" alt="文献题录"  />
-<p class="caption">(\#fig:fig3)文献题录</p>
+<p class="caption">(\#fig:fig4)文献题录</p>
 </div>
 
 <div class="figure">
 <img src=".\results\文献题录显示设置.png" alt="文献题录显示设置"  />
-<p class="caption">(\#fig:fig4)文献题录显示设置</p>
+<p class="caption">(\#fig:fig5)文献题录显示设置</p>
 </div>
 
-6. 新建bib文件以后，点击菜单栏中的"+"即可新增一条记录，出现图 \@ref(fig:fig5) 所示的对话框，下面以增加
+5. 相关设置完成之后，点击菜单栏中的"+"即可新增一条记录，出现图 \@ref(fig:fig6) 所示的对话框，下面以增加
 "加权马尔科夫AR_GARCH_GED模型在降水量中的预测"为例，进行说明，由于该文章属于期刊论文，故选择"Article",
-点击generate进入到下一步,如图 \@ref(fig:fig6) 所示分别输入作者，题目，期刊，年份之后，jabref界面就会
-出现图 \@ref(fig:fig7) 中对应的文章，也可以直接点击"{}Bibtex source",将图 \@ref(fig:fig9) 中内容直接复制
-到其对应的条框中,pages信息在optional fields选项下填写。
+点击generate进入到下一步,如图 \@ref(fig:fig7) 所示分别输入作者，题目，期刊，年份之后，jabref界面就会
+出现图 \@ref(fig:fig8) 中对应的文章，也可以直接点击"{}Bibtex source",将图 \@ref(fig:fig9) 中内容直接复制
+到其对应的条框中,pages信息在optional fields选项下填写。（注：在百度学术搜索出文章以后，点击"引用-bibtex"，
+即可出现如图 \@ref(fig:fig9)所示的内容）
 
 <div class="figure">
 <img src=".\results\新增bib文件.png" alt="新增bib文件"  />
-<p class="caption">(\#fig:fig5)新增bib文件</p>
+<p class="caption">(\#fig:fig6)新增bib文件</p>
 </div>
 
 <div class="figure">
 <img src=".\results\填写文献信息.png" alt="填写文献信息"  />
-<p class="caption">(\#fig:fig6)填写文献信息</p>
+<p class="caption">(\#fig:fig7)填写文献信息</p>
 </div>
 
 <div class="figure">
 <img src=".\results\文献信息生成.png" alt="文献信息生成"  />
-<p class="caption">(\#fig:fig7)文献信息生成</p>
+<p class="caption">(\#fig:fig8)文献信息生成</p>
 </div>
-
-7. 第4步中设置的bibtexkey此时还未起作用，需要手动更新：点击其中一条文献，然后按crtl+A全选，点击tool-autogenerate bib tex key,或者直接点击图 \@ref(fig:fig8) 菜单栏中的"钥匙"，则全部bibtexkey都得到更新。
-
-<div class="figure">
-<img src=".\results\钥匙.png" alt="钥匙"  />
-<p class="caption">(\#fig:fig8)钥匙</p>
-</div>
-
-注：在百度学术搜索出文章以后，点击"引用-bitex"，即可出现如图 \@ref(fig:fig9)所示的内容；
-在知网上导出参考文献以后，点击左侧的NotePress即可获得图 \@ref(fig:fig10) 中生成bibtexkey的信息。
 
 <div class="figure">
 <img src=".\results\百度学术.png" alt="百度学术"  />
 <p class="caption">(\#fig:fig9)百度学术</p>
 </div>
 
+6. 第3步中设置的bibtexkey此时还未起作用，需要手动更新：点击其中一条文献，然后按crtl+A全选，点击tool-autogen
+erate bib tex key,或者直接点击图 \@ref(fig:fig10) 菜单栏中的"钥匙"，则全部bibtexkey都得到更新。
+
 <div class="figure">
-<img src=".\results\知网.png" alt="知网"  />
-<p class="caption">(\#fig:fig10)知网</p>
+<img src=".\results\钥匙.png" alt="钥匙"  />
+<p class="caption">(\#fig:fig10)钥匙</p>
 </div>
 
 
@@ -382,6 +384,12 @@ edit→prefrences→Preview，Automatic after □ milliseconds，□中输入500
 <p class="caption">(\#fig:fig12)Mathtype安装</p>
 </div>
 
+# 安装pandoc
+
+1. 下载“pandoc-2.5-windows-x86_64.zip”；
+2. 将解压出来的 pandoc-crossref.exe 拷贝到 rstudio 安装文件夹里面的bin\pandoc\文件夹里面（确认这个文件
+夹含有pandoc.exe）
+3. 重启rstudio，重新生成html文件和docx文件，该文件支持公式编号。
 
 # 参考文献
 [//]: # (\bibliography{Bibfile})
