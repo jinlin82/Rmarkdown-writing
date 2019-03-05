@@ -35,9 +35,9 @@ link-citations: true
 
 **TODO**
 
-- [x] 1. 表格出不来
-- [x] 2. Bib文件如何整理
-- [x] 3. 把1、等改成1. ，以变成 markdown list
+- [x] 表格出不来
+- [x] Bib文件如何整理
+- [X] 把1、等改成1. ，以变成 markdown list
 - [ ] bibtexkey设置.png 调整
 
 
@@ -114,7 +114,7 @@ Sys.setlocale("LC_ALL", "Chinese")
 
 # 文本注意事项
 
-1. **摘要**表示“摘要”加粗, *李研* 表示“李研”斜体
+1. **摘要** 表示“摘要”加粗, *李研* 表示“李研”斜体
 2. \# 实证分析表示一级标题，且#和引言之间有一个空格, \#\# 数据准备 表示二级标题,
    \#\#\# 数据及数据来源 表示三级标题,······, \#\#\#\#\#\# 最多六个#，表示最小的
    字体 
@@ -125,16 +125,16 @@ Sys.setlocale("LC_ALL", "Chinese")
  
 1. \`r `表示行内计算，直接输入计算公式即可出结果
 2. 代码块
-~~~~
-\```{r eval=T,echo=F,error=T,warning=F,message=FALSE,comment="",results='asis'}
 
-\```
-~~~~
+` ```{r eval=T,echo=F,error=T,warning=F,message=FALSE,comment="",results='asis'} `
+
+` ``` `
+
 上述表示写R代码，error=T表示可以存在错误，warning=F表示不要警告信息，message=F表示不要警告信
 息，comment=”“表示不出现警告信息
 
 3. `dev=c('png', 'CairoPDF')` #执行pdf时输出图片，图片名可以是中文，不会报错，但只能用于pdf，
-在最开的` ```{r }```` `中加，下面代码中的画图参数要写`family="SimSun"`，表示字体为宋体，执行结
+在最开的` ```{r }``` `中加，下面代码中的画图参数要写`family="SimSun"`，表示字体为宋体，执行结
 果是文字，高清图`dev=c('png')`#执行任何文件都可以加上，但是只能输出图片，不是文字，会模糊
 4. 引用参考文献一共加四句话： 
 ```
