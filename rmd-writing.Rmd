@@ -274,7 +274,7 @@ knitr::include_graphics(".\\results\\语言设置.png")
 
 3. 设置bibtexkey: bibtexkey是文献条目的标识，每篇文献都有唯一的bibtexkey;打开options菜单的preference,
 点击弹出窗口左边的"bib tex key generator"，在第一项"default pattern"可以设置bibtexkey,图 \@ref(fig:fig3) 
-显示设置 `[auto][year]p[firstpage][lastpage]` ,分别表示”第一作者-年-p文章首页-文章末页”。
+显示设置 `[auto][year]` ,分别表示”第一作者-年”。
 
 ```{r fig3,eval=T, echo=F,fig.cap="bibtexkey设置",dev="png",results='markup', cache=F}
 knitr::include_graphics(".\\results\\bibtexkey设置.png")
