@@ -215,14 +215,17 @@ tab1根据自己上面程序中```{r tab1}中r后的tab1确定名称
 
 ## GitHub嵌入Rstudio中需要做的工作
 
-安装GitHub，在Rstudio中菜单栏点击Tools→Global Options，在弹出的对话框左边一栏点击Git/SVN，在Git executable中
+### 安装Git程序并设置环境变量
+
+### Rstudio中设置
+
+在Rstudio中菜单栏点击Tools→Global Options，在弹出的对话框左边一栏点击Git/SVN，在Git executable中
 输入git.exe所在路径，点击ok
 
 按下快捷键win+R，在弹出的窗口中输入CMD，之后在弹出的窗口中输入：
 
-git config --global user.email "380906952@qq.com"
-
-git config --global user.name "Zeng Yuanzheng"
+	git config --global user.email "380906952@qq.com"
+	git config --global user.name "Zeng Yuanzheng"
 
 （注：引号里改为自己的邮箱和名字，名字用汉语拼音写）
 
