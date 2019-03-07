@@ -205,18 +205,15 @@ tab1根据自己上面程序中```{r tab1}中r后的tab1确定名称
 
 
 
+# Windows中更改环境变量
 # GitHub相关操作
-
 ## 注册
 
 网页操作https://github.com
 
-## Github程序
+## 安装Git程序并设置环境变量
 
 ## GitHub嵌入Rstudio中需要做的工作
-
-### 安装Git程序并设置环境变量
-
 ### Rstudio中设置
 
 在Rstudio中菜单栏点击Tools→Global Options，在弹出的对话框左边一栏点击Git/SVN，在Git executable中
