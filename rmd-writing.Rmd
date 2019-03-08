@@ -41,7 +41,7 @@ link-citations: true
 - [ ] bibtexkey设置.png 调整
 
 
-# 写作准备
+# TODO 写作准备
 
 每次写之前，以上头文件是不变的，表示设定了具体的环境和规则，只能改变title、author和date。
 
