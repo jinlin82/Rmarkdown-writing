@@ -342,10 +342,11 @@ erate bib tex key,或者直接点击图 \@ref(fig:fig11) 菜单栏中的"钥匙"
 knitr::include_graphics(".\\results\\钥匙.png")
 ```
 
-注：jabref路径设置
+注：jabref设置环境变量
 
 安装rapidee，鼠标右键点击user variables窗口，点击add variable，在弹出的窗口中variable
-name输入JAVA_HOME，点击ok，返回user variables窗口，输入jre所在的路径。
+name输入JAVA_HOME，点击ok，返回user variables窗口，输入jre所在的路径。需要注意的是jabref
+和jre需要保持相同的版本，都安装32位的。
 
 # Equalx的设置和用法
 
