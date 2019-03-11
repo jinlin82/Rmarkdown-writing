@@ -259,9 +259,7 @@ bibliography: baidu.bib #文件（baidu.bib可以改，改成自己参考的文�
 ```
 7. `kable` 用来制作表格，可以在里面给表格增加名称等（需要加载knitr包）
 8. 行间公式编号例子
-
 $$y=ax+b$$ {#eq:model1}
-
 在[@eq:model1] 中，引用上述格式即可自动编号。
 9. 图表编号例子
 
