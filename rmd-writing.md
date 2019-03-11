@@ -38,8 +38,107 @@ link-citations: true
 - [x] 表格出不来
 - [x] Bib文件如何整理
 - [X] 把1、等改成1. ，以变成 markdown list
-- [ ] bibtexkey设置.png 调整
+- [X] bibtexkey设置.png 调整
 
+
+# 软件准备
+## 软件列表
+
+1. Rstudio 1.2 版本以上 [下载网址](https://www.rstudio.com/products/rstudio/download/preview/) 和 R 3.5.1 （必备）
+2. Pandoc 2.7 版本 和 pandoc-crossref（必备）
+3. Git （必备）
+4. GitHub 网站账号 （必备）
+5. Jabref(需要 jre 支持)
+6. mathtype
+7. equalx（需要 texlive 支持）
+8. rapidee（用于修改环境变量）
+
+## Windows中更改环境变量
+
+环境变量一般是指在操作系统中用来指定操作系统运行环境的一些参数，当运行某程序时，除了在当前文
+件夹中寻找外，还会到设置的默认路径中去查找。更改环境变量就是设置"Path"。下面对修改环境变量作
+简单介绍。
+
+1. 右击"我的电脑"，选择属性，找到并打开"高级系统配置"，找到"环境变量"按钮并点击。
+2. 环境变量窗口中有两个变量，一个是当前所使用用户独有的环境变量，另一个是所有用户都可以访问的
+系统变量。私人电脑若不设置新用户，二者都可以。在系统变量显示框中找到变量Path,选中并点击修改即可。
+3. 修改完毕之后全部点击确定，以保存修改的内容。一个路径与另一个路径之间要用分号隔开。
+4. 可以使用 rapidee 程序方便更改环境变量
+
+## 安装pandoc
+
+1. 下载2.7版本pandoc
+2. 下载pandoc-crossref [下载网站](https://github.com/lierdakil/pandoc-crossref/releases/download/v0.3.4.0d/windows-x86_64-pandoc_2.7.zip)
+3. 将解压出来的 pandoc.exe, pandoc-citeproc.exe, pandoc-crossref.exe 拷贝替换到 rstudio 
+   安装文件夹里面的bin\pandoc\文件夹里面（确认这个文件夹含有pandoc.exe）
+4. 重启rstudio，重新生成html文件和docx文件，该文件支持公式编号。
+
+## 安装Git程序并设置环境变量
+
+按照Windows中更改环境变量的步骤，在"Path"中将Git文件夹下的bin所在路径添加到后面即可，注意路径之
+间用分号隔开。
+
+# GitHub相关操作
+## 注册
+
+网页操作https://github.com
+
+
+
+## GitHub嵌入Rstudio中需要做的工作
+### Rstudio中设置
+
+在Rstudio中菜单栏点击Tools→Global Options，在弹出的对话框左边一栏点击Git/SVN，
+在Git executable中输入git.exe所在路径，点击ok
+
+按下快捷键win+R，在弹出的窗口中输入CMD，之后在弹出的窗口中输入：
+
+	git config --global user.email "380906952@qq.com"
+	git config --global user.name "Zeng Yuanzheng"
+
+（注：引号里改为自己的邮箱和名字，名字用汉语拼音写）
+
+
+## 克隆项目：如何在Rstudio中克隆项目
+
+1. 在Rstudio中，点击file→new project→version control→git，在弹出的对话框中，
+   Repository URL输入项目链接，
+2. Project directory name输入项目名字（一般写入项目链接后会自动生成），Create
+   project as subdirectory of中输入自己电脑上要把项目保存的位置，点击Create
+   Project，项目创建完毕。
+3. 之后会在Rstudio右下角显示出项目里的所有内容。
+
+## 合作者步骤
+
+1. repository owner向合作者发出邀请（repository setting）
+2. 被邀请者在网页（https://github.com/username/reponame/invitations) 接受邀请，成为合作者
+（注：uername为帐户名，reponame为项目名）
+3. 合作者clone 项目到本地repository
+4. 打开项目中的.Rmd，对文件中的内容进行修改（Modified），修改完之后点击保存（Save），在git图标下
+点击commit，在弹出的窗口中，左上角勾选刚刚修改的Rmd文件，右上角登记(Stage)修改的内容（比如，在Rmd中修改
+了图片，写入modify figures即可），点击commit，之后push，即完整步骤为：
+```
+修改(Modify) -> 保存(save) -> 登记(stage) -> 提交(commit) -> 上传(push)
+```
+
+5. 重新开始工作时，在git图标中点击pull，到最新版本
+6. 如果push的时候，remote已经修改，两个修改不一致则会产生冲突，这时需要重新pull并手工解决冲突后
+再按照push步骤提交（此时，pull的最新版本会出现“<<<<<< ====== >>>>>>”这三个符号标记的内容，
+解决冲突可以同时保留其他内容，此时只需将这三个符号及其后面紧跟的内容删掉即可）
+
+注：
+
+1. 在编写Rmd时，要使用相对路径，不能使用绝对路径，因为绝对路径只有在自己电脑上才可以运行，
+相对路径大家都可以运行。
+2. 在编写markdown时，需要手动换行，大概80个字符或40个汉字左右的时候可以换一行，编辑窗口
+左下角可以看到字符数，碰到标点符号或者行内公式，保持在一行。
+3. 每次提交之前切忌把全部内容剪切复制，否则无法知晓真正改动内容。
+
+## 创建项目：把本地文件夹用git控制并push到Github的步骤
+
+1. 使用Github网页操作：网页中建立项目。把需要版本控制的文件上传到项目中，然后再
+   把项目clone到文件夹中。
+2. 使用git命令操作，可以在Terminal运行git命令。
 
 # 写作准备
 
@@ -203,60 +302,6 @@ tab1根据自己上面程序中```{r tab1}中r后的tab1确定名称
 	2. http://www.jabref.org/
 	3. http://download1.rstudio.org/RStudio-0.99.903.zip
 
-
-
-# Windows中更改环境变量
-# GitHub相关操作
-## 注册
-
-网页操作https://github.com
-
-## 安装Git程序并设置环境变量
-
-## GitHub嵌入Rstudio中需要做的工作
-### Rstudio中设置
-
-在Rstudio中菜单栏点击Tools→Global Options，在弹出的对话框左边一栏点击Git/SVN，在Git executable中
-输入git.exe所在路径，点击ok
-
-按下快捷键win+R，在弹出的窗口中输入CMD，之后在弹出的窗口中输入：
-
-	git config --global user.email "380906952@qq.com"
-	git config --global user.name "Zeng Yuanzheng"
-
-（注：引号里改为自己的邮箱和名字，名字用汉语拼音写）
-
-## 把本地文件夹用git控制并push到Github的步骤
-
-1. 使用Github网页操作：网页中建立项目。把需要版本控制的文件上传到项目中，然后再把项目clone到文件夹中。
-2. 使用git命令操作，可以在Terminal运行git命令。
-
-## 合作者步骤
-
-1. repository owner向合作者发出邀请（repository setting）
-2. 被邀请者在网页（https://github.com/username/reponame/invitations) 接受邀请，成为合作者
-（注：uername为帐户名，reponame为项目名）
-3. 合作者clone owner的repository到本地repository，具体操作为：
-在Rstudio中，点击file→new project→version control→git，在弹出的对话框中，Repository URL输入项目链接，
-Project directory name输入项目名字（一般写入项目链接后会自动生成），Create project as subdirectory of
-中输入自己电脑上要把项目保存的位置，点击Create Project，项目创建完毕。之后会在Rstudio右下角
-显示出项目里的所有内容。
-4. 打开项目中的.Rmd，对文件中的内容进行修改（Modified），修改完之后点击保存（Save），在git图标下
-点击commit，在弹出的窗口中，左上角勾选刚刚修改的Rmd文件，右上角登记修改的内容（比如，在Rmd中修改
-了图片，写入modify figures即可），点击commit，之后push
-5. 重新开始工作时，在git图标中点击pull，到最新版本
-6. 如果push的时候，remote已经修改，两个修改不一致则会产生冲突，这时需要重新pull并手工解决冲突后
-再按照push步骤提交（此时，pull的最新版本会出现“<<<<<< ====== >>>>>>”这三个符号标记的内容，
-解决冲突可以同时保留其他内容，此时只需将这三个符号及其后面紧跟的内容删掉即可）
-
-注：
-
-1. 在编写Rmd时，要使用相对路径，不能使用绝对路径，因为绝对路径只有在自己电脑上才可以运行，
-相对路径大家都可以运行。
-2. 在编写markdown时，需要手动换行，大概80个字符或40个汉字左右的时候可以换一行，编辑窗口
-左下角可以看到字符数，碰到标点符号或者行内公式，保持在一行。
-3. 每次提交之前切忌把全部内容剪切复制，否则无法知晓真正改动内容。
-
 # Bib文件如何整理
 ## 参考文献管理软件 Jabref
 ### 功能
@@ -320,7 +365,8 @@ Project directory name输入项目名字（一般写入项目链接后会自动�
 点击generate进入到下一步,如图 \@ref(fig:fig7) 所示分别输入作者，题目，期刊，年份之后，jabref界面就会
 出现图 \@ref(fig:fig8) 中对应的文章，也可以直接点击"{}Bibtex source",将图 \@ref(fig:fig9) 中内容直接复制
 到其对应的条框中,pages信息在optional fields选项下填写。（注：在百度学术搜索出文章以后，点击"引用-bibtex"，
-即可出现如图 \@ref(fig:fig9)所示的内容）
+即可出现如图 \@ref(fig:fig9)所示的内容；英文文献可用链接"https://www.bing.com/academic?mkt=zh-CN&mkt=zh-CN"
+进行搜索，搜索成功以后点击"Download citation"即可下载参考bibtex。）
 
 <div class="figure">
 <img src=".\results\新增bib文件.png" alt="新增bib文件"  />
@@ -350,6 +396,11 @@ erate bib tex key,或者直接点击图 \@ref(fig:fig10) 菜单栏中的"钥匙"
 <p class="caption">(\#fig:fig10)钥匙</p>
 </div>
 
+注：jabref设置环境变量
+
+安装rapidee，鼠标右键点击user variables窗口，点击add variable，在弹出的窗口中variable
+name输入JAVA_HOME，点击ok，返回user variables窗口，输入jre所在的路径。需要注意的是jabref
+和jre需要保持相同的版本，都安装32位的。
 
 # Equalx的设置和用法
 
@@ -386,12 +437,6 @@ edit→prefrences→Preview，Automatic after □ milliseconds，□中输入500
 <p class="caption">(\#fig:fig12)Mathtype安装</p>
 </div>
 
-# 安装pandoc
-
-1. 下载“pandoc-2.5-windows-x86_64.zip”；
-2. 将解压出来的 pandoc-crossref.exe 拷贝到 rstudio 安装文件夹里面的bin\pandoc\文件夹里面（确认这个文件
-夹含有pandoc.exe）
-3. 重启rstudio，重新生成html文件和docx文件，该文件支持公式编号。
 
 # 参考文献
 [//]: # (\bibliography{Bibfile})
