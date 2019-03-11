@@ -313,7 +313,7 @@ knitr::include_graphics(".\\results\\文献题录显示设置.png")
 出现图 \@ref(fig:fig8) 中对应的文章，也可以直接点击"{}Bibtex source",将图 \@ref(fig:fig9) 中内容直接复制
 到其对应的条框中,pages信息在optional fields选项下填写。（注：在百度学术搜索出文章以后，点击"引用-bibtex"，
 即可出现如图 \@ref(fig:fig9)所示的内容；英文文献可用链接"https://www.bing.com/academic?mkt=zh-CN&mkt=zh-CN"
-进行搜索，搜索成功以后点击图 \@ref(fig:fig10) 中红色框内容即可下载参考bibtex。）
+进行搜索，搜索成功以后点击"Download citation"即可下载参考bibtex。）
 
 ```{r fig6,eval=T, echo=F,fig.cap="新增bib文件",dev="png",results='markup', cache=F}
 knitr::include_graphics(".\\results\\新增bib文件.png")
@@ -331,14 +331,10 @@ knitr::include_graphics(".\\results\\文献信息生成.png")
 knitr::include_graphics(".\\results\\百度学术.png")
 ```
 
-```{r fig10,eval=T, echo=F,fig.cap="英文文献搜索",dev="png",results='markup', cache=F}
-knitr::include_graphics(".\\results\\英文文献搜索.png")
-```
-
 6. 第3步中设置的bibtexkey此时还未起作用，需要手动更新：点击其中一条文献，然后按crtl+A全选，点击tool-autogen
-erate bib tex key,或者直接点击图 \@ref(fig:fig11) 菜单栏中的"钥匙"，则全部bibtexkey都得到更新。
+erate bib tex key,或者直接点击图 \@ref(fig:fig10) 菜单栏中的"钥匙"，则全部bibtexkey都得到更新。
 
-```{r fig11,eval=T, echo=F,fig.cap="钥匙",dev="png",results='markup', cache=F}
+```{r fig10,eval=T, echo=F,fig.cap="钥匙",dev="png",results='markup', cache=F}
 knitr::include_graphics(".\\results\\钥匙.png")
 ```
 
@@ -353,9 +349,9 @@ name输入JAVA_HOME，点击ok，返回user variables窗口，输入jre所在的
 下载Equalx，打开equalx.exe，菜单栏点击edit→prefrences→Advanced，点击pdflatex后的change，
 找到pdflatex.exe所在的路径（基本为：./texlive/2014/bin/win32/pdflatex.exe，.表示texlive所在的路径，
 注：装Equalx之前需要下载texlive），之后点击ghostscript后的change，找到gswin32c.exe所在
-的路径（注：修改之前需要下载gs）,如图\@ref(fig:fig12) 所示。
+的路径（注：修改之前需要下载gs）,如图\@ref(fig:fig11) 所示。
 
-```{r fig12,eval=T, echo=F,fig.cap="Equalx安装",dev="png",results='markup', cache=F}
+```{r fig11,eval=T, echo=F,fig.cap="Equalx安装",dev="png",results='markup', cache=F}
 knitr::include_graphics(".\\results\\Equalx安装.png")
 ```
 
@@ -373,11 +369,11 @@ edit→prefrences→Preview，Automatic after □ milliseconds，□中输入500
 1. 首先下载mathtype，将其嵌套到word中去，操作成功之后word菜单栏会出现mathtype；
 2. 点击mathtype中的convert equations,设置相关属性，勾选Equation Type to convert模块的前两
 项和第四项，Range模块的“whole document”,在Convert equation to模块下的“Text using MathType translator”
-选择“LaTex 2.09 and lator”，如图 \@ref(fig:fig13) 所示，设置完成以后点击convert就能将word
+选择“LaTex 2.09 and lator”，如图 \@ref(fig:fig12) 所示，设置完成以后点击convert就能将word
 文档中的公式转化为LaTex公式。
 注：若安装不成功，卸掉重新安装mathtype即可。
 
-```{r fig13,eval=T, echo=F,fig.cap="Mathtype安装",dev="png",results='markup', cache=F}
+```{r fig12,eval=T, echo=F,fig.cap="Mathtype安装",dev="png",results='markup', cache=F}
 knitr::include_graphics(".\\results\\Mathtype安装.png")
 ```
 
