@@ -190,12 +190,25 @@ tab1根据自己上面程序中```{r tab1}中r后的tab1确定名称
 
 
 # Windows中更改环境变量
+
+环境变量一般是指在操作系统中用来指定操作系统运行环境的一些参数，当运行某程序时，除了在当前文
+件夹中寻找外，还会到设置的默认路径中去查找。更改环境变量就是设置"Path"。下面对修改环境变量作
+简单介绍。
+
+1. 右击"我的电脑"，选择属性，找到并打开"高级系统配置"，找到"环境变量"按钮并点击。
+2. 环境变量窗口中有两个变量，一个是当前所使用用户独有的环境变量，另一个是所有用户都可以访问的
+系统变量。私人电脑若不设置新用户，二者都可以。在系统变量显示框中找到变量Path,选中并点击修改即可。
+3. 修改完毕之后全部点击确定，以保存修改的内容。一个路径与另一个路径之间要用分号隔开。
+
 # GitHub相关操作
 ## 注册
 
 网页操作https://github.com
 
 ## 安装Git程序并设置环境变量
+
+按照Windows中更改环境变量的步骤，在"Path"中将Git文件夹下的bin所在路径添加到后面即可，注意路径之
+间用分号隔开。
 
 ## GitHub嵌入Rstudio中需要做的工作
 ### Rstudio中设置
@@ -299,7 +312,8 @@ knitr::include_graphics(".\\results\\文献题录显示设置.png")
 点击generate进入到下一步,如图 \@ref(fig:fig7) 所示分别输入作者，题目，期刊，年份之后，jabref界面就会
 出现图 \@ref(fig:fig8) 中对应的文章，也可以直接点击"{}Bibtex source",将图 \@ref(fig:fig9) 中内容直接复制
 到其对应的条框中,pages信息在optional fields选项下填写。（注：在百度学术搜索出文章以后，点击"引用-bibtex"，
-即可出现如图 \@ref(fig:fig9)所示的内容）
+即可出现如图 \@ref(fig:fig9)所示的内容；英文文献可用链接"https://www.bing.com/academic?mkt=zh-CN&mkt=zh-CN"
+进行搜索，搜索成功以后点击"Download citation"即可下载参考bibtex。）
 
 ```{r fig6,eval=T, echo=F,fig.cap="新增bib文件",dev="png",results='markup', cache=F}
 knitr::include_graphics(".\\results\\新增bib文件.png")
@@ -324,6 +338,11 @@ erate bib tex key,或者直接点击图 \@ref(fig:fig10) 菜单栏中的"钥匙"
 knitr::include_graphics(".\\results\\钥匙.png")
 ```
 
+注：jabref设置环境变量
+
+安装rapidee，鼠标右键点击user variables窗口，点击add variable，在弹出的窗口中variable
+name输入JAVA_HOME，点击ok，返回user variables窗口，输入jre所在的路径。需要注意的是jabref
+和jre需要保持相同的版本，都安装32位的。
 
 # Equalx的设置和用法
 
