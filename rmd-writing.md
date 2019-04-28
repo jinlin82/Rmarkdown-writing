@@ -70,7 +70,7 @@ link-citations: true
 1. 下载2.7版本pandoc
 2. 下载pandoc-crossref [下载网站](https://github.com/lierdakil/pandoc-crossref/releases/download/v0.3.4.0d/windows-x86_64-pandoc_2.7.zip)
 3. 将解压出来的 pandoc.exe, pandoc-citeproc.exe, pandoc-crossref.exe 拷贝替换到 rstudio 
-   安装文件夹里面的bin\pandoc\文件夹里面（确认这个文件夹含有pandoc.exe）
+   安装文件夹里面的 `bin\pandoc\` 文件夹里面（确认这个文件夹含有pandoc.exe）
 4. 重启rstudio，重新生成html文件和docx文件，该文件支持公式编号。
 
 ## 安装Git程序并设置环境变量
@@ -220,7 +220,9 @@ Sys.setlocale("LC_ALL", "Chinese")
    \#\#\# 数据及数据来源 表示三级标题,······, \#\#\#\#\#\# 最多六个#，表示最小的
    字体 
 5. 一对美元符号 ` $x$ ` 表示行内公式，左右各空一格,  `$$x+y$$` 两对美元符号表示
-   行间公式，可以往后空一行再进行写作 
+   行间公式，可以往后空一行再进行写作
+6. 像ln、exp这些都是特定命令，不要直接敲，要用`\ln`等
+7. 文章中的变量名不要用斜体，比如gdp，要写`\text{gdp}`
  
 # 代码注意事项
  
@@ -289,16 +291,16 @@ tab1根据自己上面程序中```{r tab1}中r后的tab1确定名称
 
 # 编码注意事项
 
-1. 行间公式后空一行，行内公式、代码前后各空一格（行）
-2. worktools文件包含内容：everything notepad++ rstudio telive PathEditor 两个环境变量
-3. 程序、路径、文件名少用中文，要用UTF-8编码
+1. 程序、路径、文件名少用中文，要用UTF-8编码
+2. 行间公式后空一行，行内公式、代码前后各空一格（行）
+3. worktools文件包含内容：everything notepad++ rstudio telive PathEditor 两个环境变量
 4. 尽量将程序的路径单独用一个变量表示出来，放在最前面
 5. 不要轻易尝试直接在rstutio中复制，先复制到notepad++（**只支持文本**）再复制
 6. 文件备份：default .tex
 7. 三个软件链接：
-	1. https://elearningindustry.com/12-best-free-online-bibliography-and-citation-tools
-	2. http://www.jabref.org/
-	3. http://download1.rstudio.org/RStudio-0.99.903.zip
+   1. https://elearningindustry.com/12-best-free-online-bibliography-and-citation-tools
+   2. http://www.jabref.org/
+   3. http://download1.rstudio.org/RStudio-0.99.903.zip
 
 # Bib文件如何整理
 ## 参考文献管理软件 Jabref
@@ -315,7 +317,7 @@ tab1根据自己上面程序中```{r tab1}中r后的tab1确定名称
     建txt文件，这样导入到jabref后会乱码；通过txt文件可以同时导入多条参考文献)
     
 <div class="figure">
-<img src=".\results\知网.png" alt="知网"  />
+<img src="./results/zhiwang.png" alt="知网"  />
 <p class="caption">(\#fig:fig1)知网</p>
 </div>
 
@@ -331,7 +333,7 @@ tab1根据自己上面程序中```{r tab1}中r后的tab1确定名称
 右侧框中将E"nglish"改为"simplified Chinese",如图 \@ref(fig:fig2) 所示。此步骤可忽略。
 
 <div class="figure">
-<img src=".\results\语言设置.png" alt="语言设置"  />
+<img src=".\results\language.png" alt="语言设置"  />
 <p class="caption">(\#fig:fig2)语言设置</p>
 </div>
 
