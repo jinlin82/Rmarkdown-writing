@@ -387,7 +387,7 @@ excel打开csv文件默认编码方式为uf-8，所以一旦出现乱码，可�
 knitr::include_graphics(".\\results\\recode.png")
 ```
 
-3.打开转码后的csv文件，增加用于论文参考文献引用的bibtexkey列,即[@authoryear]，整理好之后，
+3.打开转码后的csv文件，增加用于论文参考文献引用的bibtexkey列,即 `[@authoryear]` ，整理好之后，
 可直接在论文中相应位置复制粘贴，不易出错。如图 \@ref(fig:fig1-1) 所示，
 引用bibtexkey的位置即为论文中注明参考文献顺序的角标的位置。
 

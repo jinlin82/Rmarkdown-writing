@@ -400,7 +400,51 @@ erate bib tex key,或者直接点击图 \@ref(fig:fig10) 菜单栏中的"钥匙"
 
 安装rapidee，鼠标右键点击user variables窗口，点击add variable，在弹出的窗口中variable
 name输入JAVA_HOME，点击ok，返回user variables窗口，输入jre所在的路径。需要注意的是jabref
-和jre需要保持相同的版本，都安装32位的。
+和jre需要保持相同的版本，都安装32位或者64位（建议64位）的。
+
+### 整理bib文件注意事项
+
+1.在Jabref里面整理好bib文件以后，依次导出Bibfile.bib文件和Bibfile.csv文件;
+
+2.转码：若Jabref输出的csv文件乱码，则用记事本打开该csv文件，并选择编码方式为ANSI，如图 \@ref(fig:fig1-0) 所示。
+excel打开csv文件默认编码方式为uf-8，所以一旦出现乱码，可以选择ANSI转码。
+
+<div class="figure">
+<img src=".\results\recode.png" alt="ANSI编码"  />
+<p class="caption">(\#fig:fig1-0)ANSI编码</p>
+</div>
+
+3.打开转码后的csv文件，增加用于论文参考文献引用的bibtexkey列,即 `[@authoryear]` ，整理好之后，
+可直接在论文中相应位置复制粘贴，不易出错。如图 \@ref(fig:fig1-1) 所示，
+引用bibtexkey的位置即为论文中注明参考文献顺序的角标的位置。
+
+<div class="figure">
+<img src=".\results\bibtexkey.png" alt="bibtexkey"  />
+<p class="caption">(\#fig:fig1-1)bibtexkey</p>
+</div>
+
+### 如何运用Rmarkdown在论文中引用参考文献
+
+1.在所创建的项目中添加上面生成的BIbfile.bib文件；
+
+2.Rmd文件中引用参考文献时，在相应位置添加[@authoryear]即可。注意[]中的内容即为Bibfile文件中生成的bibtexkey。
+
+3.在Rmd文件末尾加
+“
+```
+# 参考文献[//]: 
+ (\bibliography{Bibfile})"
+```
+"
+
+### 参考文献列出所有bib文件中条目方法
+
+在header文件中增加”nocite: '@*'“，如图\ref(fig:fig1-2)所示
+
+<div class="figure">
+<img src=".\results\notice.png" alt="notice"  />
+<p class="caption">(\#fig:fig1-2)notice</p>
+</div>
 
 # Equalx的设置和用法
 
