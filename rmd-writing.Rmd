@@ -379,7 +379,7 @@ knitr::include_graphics(".\\results\\yaoshi.png")
 name输入JAVA_HOME，点击ok，返回user variables窗口，输入jre所在的路径。需要注意的是jabref
 和jre需要保持相同的版本，都安装32位或者64位（建议64位）的。
 
-### 整理bib文件注意事项
+## 整理bib文件注意事项
 
 1.在Jabref里面整理好bib文件以后，依次导出Bibfile.bib文件和Bibfile.csv文件;
 
@@ -398,7 +398,7 @@ knitr::include_graphics(".\\results\\recode.png")
 knitr::include_graphics(".\\results\\bibtexkey.png")
 ```
 
-### 如何运用Rmarkdown在论文中引用参考文献
+## 如何运用Rmarkdown在论文中引用参考文献
 
 1.在所创建的项目中添加上面生成的BIbfile.bib文件；
 
@@ -412,7 +412,7 @@ knitr::include_graphics(".\\results\\bibtexkey.png")
 ```
 "
 
-### 参考文献列出所有bib文件中条目方法
+## 参考文献列出所有bib文件中条目方法
 
 在header文件中增加”nocite: '@*'“，如图\ref(fig:fig1-2)所示
 
