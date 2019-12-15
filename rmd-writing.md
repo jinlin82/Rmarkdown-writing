@@ -481,6 +481,24 @@ edit→prefrences→Preview，Automatic after □ milliseconds，□中输入500
 <p class="caption">(\#fig:fig12)Mathtype安装</p>
 </div>
 
+# Rstudio生成bookdown pdf步骤
+
+1. 点击菜单 build -> config build tools...
+2. site directory 要设置为 index.rmd 所在的文件夹，如图 \@ref(fig:fig13) 所示，设置好确认即可。
+
+<div class="figure">
+<img src=".\results\Build Tools设置.png" alt="Build Tools设置"  />
+<p class="caption">(\#fig:fig13)Build Tools设置</p>
+</div>
+
+3. 然后点击右上角的build按钮,点击Build Book，选择第二个，如图 \@ref(fig:fig14)即可生成pdf。
+
+<div class="figure">
+<img src=".\results\bookdown选择.png" alt="bookdown选择"  />
+<p class="caption">(\#fig:fig14)bookdown选择</p>
+</div>
+
+注意：出错后要删除gamm main.md 文件，再重新build.
 
 # 参考文献
 [//]: # (\bibliography{Bibfile})

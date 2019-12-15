@@ -450,6 +450,22 @@ edit→prefrences→Preview，Automatic after □ milliseconds，□中输入500
 knitr::include_graphics(".\\results\\Mathtype安装.png")
 ```
 
+# Rstudio生成bookdown pdf步骤
+
+1. 点击菜单 build -> config build tools...
+2. site directory 要设置为 index.rmd 所在的文件夹，如图 \@ref(fig:fig13) 所示，设置好确认即可。
+
+```{r fig13,eval=T, echo=F,fig.cap="Build Tools设置",dev="png",results='markup', cache=F}
+knitr::include_graphics(".\\results\\Build Tools设置.png")
+```
+
+3. 然后点击右上角的build按钮,点击Build Book，选择第二个，如图 \@ref(fig:fig14)即可生成pdf。
+
+```{r fig14,eval=T, echo=F,fig.cap="bookdown选择",dev="png",results='markup', cache=F}
+knitr::include_graphics(".\\results\\bookdown选择.png")
+```
+
+注意：出错后要删除gamm main.md 文件，再重新build.
 
 # 参考文献
 [//]: # (\bibliography{Bibfile})
