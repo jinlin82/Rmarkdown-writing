@@ -1,5 +1,14 @@
 html { font-size: 100%; overflow-y: scroll; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
 
+#TOC {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 20em;
+  height: 100%;
+  overflow:auto;
+}
+
 body{
 color:#444;
 font-family:Georgia, Palatino, 'Palatino Linotype', Times, 'Times New Roman', serif;
@@ -8,6 +17,7 @@ line-height:1.5em;
 padding:1em;
 margin:auto;
 max-width:50em;
+margin-left:21em;
 background:#fefefe;
 text-align:justify;
 text-justify:inter-ideograph;
