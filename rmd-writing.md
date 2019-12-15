@@ -301,6 +301,8 @@ tab1根据自己上面程序中```{r tab1}中r后的tab1确定名称
    1. https://elearningindustry.com/12-best-free-online-bibliography-and-citation-tools
    2. http://www.jabref.org/
    3. http://download1.rstudio.org/RStudio-0.99.903.zip
+8. 插入图形文件的路径中文件名不能用中文，不能有空格
+9. 插入csv文件时，文件名中文没事，但不能有空格
 
 # Bib文件如何整理
 ## 参考文献管理软件 Jabref
@@ -313,11 +315,12 @@ tab1根据自己上面程序中```{r tab1}中r后的tab1确定名称
     2. 可 portable 使用
     3. 下载Jabref
 ### 知网文献导入步骤
-    1. 知网查找文献后导出为 Endnote格式（.txt文件），见图 \@ref(fig:fig1) 。(注：不要复制到剪贴板以后再新
+    1. 知网查找文献后导出为Endnote格式（.txt文件），见图 \@ref(fig:fig1)
+    。(注：不要复制到剪贴板以后再新
     建txt文件，这样导入到jabref后会乱码；通过txt文件可以同时导入多条参考文献)
     
 <div class="figure">
-<img src="./results/zhiwang.png" alt="知网"  />
+<img src=".\results\zhiwang.png" alt="知网"  />
 <p class="caption">(\#fig:fig1)知网</p>
 </div>
 
@@ -342,7 +345,7 @@ tab1根据自己上面程序中```{r tab1}中r后的tab1确定名称
 显示设置 `[auto][Year]` ,分别表示”第一作者-年”。
 
 <div class="figure">
-<img src=".\results\bibtexkey设置.png" alt="bibtexkey设置"  />
+<img src=".\results\bibtexkeyshezhi.png" alt="bibtexkey设置"  />
 <p class="caption">(\#fig:fig3)bibtexkey设置</p>
 </div>
 
@@ -351,12 +354,12 @@ tab1根据自己上面程序中```{r tab1}中r后的tab1确定名称
 如要删掉journal,只需选中"journal"框以后点击右侧的"-"即可，同样点击"+"也可增加题录显示内容。
 
 <div class="figure">
-<img src=".\results\文献题录.png" alt="文献题录"  />
+<img src=".\results\wenxiantilu.png" alt="文献题录"  />
 <p class="caption">(\#fig:fig4)文献题录</p>
 </div>
 
 <div class="figure">
-<img src=".\results\文献题录显示设置.png" alt="文献题录显示设置"  />
+<img src=".\results\tilushezhi.png" alt="文献题录显示设置"  />
 <p class="caption">(\#fig:fig5)文献题录显示设置</p>
 </div>
 
@@ -369,22 +372,22 @@ tab1根据自己上面程序中```{r tab1}中r后的tab1确定名称
 进行搜索，搜索成功以后点击"Download citation"即可下载参考bibtex。）
 
 <div class="figure">
-<img src=".\results\新增bib文件.png" alt="新增bib文件"  />
+<img src=".\results\zengbib.png" alt="新增bib文件"  />
 <p class="caption">(\#fig:fig6)新增bib文件</p>
 </div>
 
 <div class="figure">
-<img src=".\results\填写文献信息.png" alt="填写文献信息"  />
+<img src=".\results\xiewenxian.png" alt="填写文献信息"  />
 <p class="caption">(\#fig:fig7)填写文献信息</p>
 </div>
 
 <div class="figure">
-<img src=".\results\文献信息生成.png" alt="文献信息生成"  />
+<img src=".\results\wenxianshengcheng.png" alt="文献信息生成"  />
 <p class="caption">(\#fig:fig8)文献信息生成</p>
 </div>
 
 <div class="figure">
-<img src=".\results\百度学术.png" alt="百度学术"  />
+<img src=".\results\baidu.png" alt="百度学术"  />
 <p class="caption">(\#fig:fig9)百度学术</p>
 </div>
 
@@ -392,7 +395,7 @@ tab1根据自己上面程序中```{r tab1}中r后的tab1确定名称
 erate bib tex key,或者直接点击图 \@ref(fig:fig10) 菜单栏中的"钥匙"，则全部bibtexkey都得到更新。
 
 <div class="figure">
-<img src=".\results\钥匙.png" alt="钥匙"  />
+<img src=".\results\yaoshi.png" alt="钥匙"  />
 <p class="caption">(\#fig:fig10)钥匙</p>
 </div>
 
@@ -454,7 +457,7 @@ excel打开csv文件默认编码方式为uf-8，所以一旦出现乱码，可�
 的路径（注：修改之前需要下载gs）,如图\@ref(fig:fig11) 所示。
 
 <div class="figure">
-<img src=".\results\Equalx安装.png" alt="Equalx安装"  />
+<img src=".\results\Equalx.png" alt="Equalx安装"  />
 <p class="caption">(\#fig:fig11)Equalx安装</p>
 </div>
 
@@ -477,7 +480,7 @@ edit→prefrences→Preview，Automatic after □ milliseconds，□中输入500
 注：若安装不成功，卸掉重新安装mathtype即可。
 
 <div class="figure">
-<img src=".\results\Mathtype安装.png" alt="Mathtype安装"  />
+<img src=".\results\Mathtype.png" alt="Mathtype安装"  />
 <p class="caption">(\#fig:fig12)Mathtype安装</p>
 </div>
 
@@ -487,14 +490,14 @@ edit→prefrences→Preview，Automatic after □ milliseconds，□中输入500
 2. site directory 要设置为 index.rmd 所在的文件夹，如图 \@ref(fig:fig13) 所示，设置好确认即可。
 
 <div class="figure">
-<img src=".\results\Build Tools设置.png" alt="Build Tools设置"  />
+<img src=".\results\BuildTools.png" alt="Build Tools设置"  />
 <p class="caption">(\#fig:fig13)Build Tools设置</p>
 </div>
 
 3. 然后点击右上角的build按钮,点击Build Book，选择第二个，如图 \@ref(fig:fig14)即可生成pdf。
 
 <div class="figure">
-<img src=".\results\bookdown选择.png" alt="bookdown选择"  />
+<img src=".\results\bookdown.png" alt="bookdown选择"  />
 <p class="caption">(\#fig:fig14)bookdown选择</p>
 </div>
 
