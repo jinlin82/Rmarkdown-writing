@@ -435,10 +435,10 @@ edit→prefrences→editor，family选择Consolas，size选择14，字体可以�
 
 edit→prefrences→Preview，Automatic after □ milliseconds，□中输入5000
 
-在编辑框中输入\alpha+\hat{\beta}就会显示出公式，此软件的意义在于，当输入\a时，
-就会出现\alpha等以\a开头的字母，选中自己所需要的直接enter即可，会自动补全，
-避免记不住markdown中公式一直看文档。还可以通过点击上面的符号直接输入。对于比较复杂的公式，
-可以先在这里面输入，然后把latex代码复制到rmd中。
+在编辑框中输入 `\alpha+\hat{\beta}` 就会显示出公式，此软件的意义在于，当输入
+`\a`时，就会出现 `\alpha` 等以 `\a` 开头的字母，选中自己所需要的直接enter即可，
+会自动补全，避免记不住markdown中公式一直看文档。还可以通过点击上面的符号直接输入。
+对于比较复杂的公式，可以先在这里面输入，然后把latex代码复制到rmd中。
 
 # Mathtype的设置和用法
 
