@@ -4,34 +4,63 @@ author: "Jin's students"
 date: "2019-03-03"
 output:
   bookdown::html_document2:
-    number_sections: true
-    seq_numbering: true
     fig_caption: true
     highlight: haddock
-    theme: null
-    md_extensions: +east_asian_line_breaks
     keep_md: true
-    toc: true
-    pandoc_args: ["--filter", "pandoc-crossref", "-M", "eqnPrefix="]
-  bookdown::word_document2:
-    fig_caption: true
-    reference_docx: ./style/word-styles-02.docx
     md_extensions: +east_asian_line_breaks
-    pandoc_args: ["--filter", "pandoc-crossref"]
+    number_sections: true
+    pandoc_args:
+    - --filter
+    - pandoc-crossref
+    - -M
+    - eqnPrefix=
+    seq_numbering: false
+    toc: true
   bookdown::pdf_document2:
-    keep_tex: yes
-    toc: false
+    keep_tex: true
     latex_engine: xelatex
     md_extensions: +east_asian_line_breaks
-    pandoc_args: ["--listing", "--filter", "pandoc-crossref"]
-css: ./style/markdown.css
-autoEqnLabels: true
-eqnPrefixTemplate: ($$i$$)
-linkReferences: true
-bibliography: Bibfile.bib
+    pandoc_args:
+    - --listing
+    - --filter
+    - pandoc-crossref
+    toc: false
+  slidy_presentation:
+    highlight: haddock
+  bookdown::word_document2:
+    fig_caption: true
+    md_extensions: +east_asian_line_breaks
+    pandoc_args:
+    - --filter
+    - pandoc-crossref
+    reference_docx: ./style/word-styles-02.docx
+  ioslides_presentation:
+    highlight: haddock
+    slide_level: 3
+  beamer_presentation:
+    keep_tex: true
+    latex_engine: xelatex
+    toc: true
+    pandoc_args:
+    - --listing
+    - --filter
+    - pandoc-crossref
+    slide_level: 3
+    template: ./style/beamer-template.tex
+    includes:
+      in_header: author.tex
 csl: ./style/chinese-gb7714-2005-numeric.csl
+css: ./style/markdown.css
+bibliography: Bibfile.bib
+eqnPrefixTemplate: ($$i$$)
+institute: 中南财经政法大学统计与数学学院
 link-citations: true
+linkReferences: true
+chapters: true
+tableEqns: false
+autoEqnLabels: false
 ---
+
 
 **TODO**
 
@@ -142,7 +171,8 @@ link-citations: true
 
 # 写作准备
 
-每次写之前，以上头文件是不变的，表示设定了具体的环境和规则，只能改变title、author和date。
+每次写之前，以上头文件是不变的，表示设定了具体的环境和规则，只能改变title、
+author和date。
 
 ```
 ---
@@ -151,33 +181,61 @@ author: "Jin's students"
 date: "2019-03-03"
 output:
   bookdown::html_document2:
-    number_sections: true
-    seq_numbering: true
     fig_caption: true
     highlight: haddock
-    theme: null
-    md_extensions: +east_asian_line_breaks
     keep_md: true
-    toc: false
-    pandoc_args: ["--filter", "pandoc-crossref", "-M", "eqnPrefix="]
-  bookdown::word_document2:
-    fig_caption: true
-    reference_docx: ./style/word-styles-02.docx
     md_extensions: +east_asian_line_breaks
-    pandoc_args: ["--filter", "pandoc-crossref"]
+    number_sections: true
+    pandoc_args:
+    - --filter
+    - pandoc-crossref
+    - -M
+    - eqnPrefix=
+    seq_numbering: false
+    toc: true
   bookdown::pdf_document2:
-    keep_tex: yes
-    toc: false
+    keep_tex: true
     latex_engine: xelatex
     md_extensions: +east_asian_line_breaks
-    pandoc_args: ["--listing", "--filter", "pandoc-crossref"]
-css: ./style/markdown.css
-autoEqnLabels: true
-eqnPrefixTemplate: ($$i$$)
-linkReferences: true
-bibliography: Bibfile.bib
+    pandoc_args:
+    - --listing
+    - --filter
+    - pandoc-crossref
+    toc: false
+  slidy_presentation:
+    highlight: haddock
+  bookdown::word_document2:
+    fig_caption: true
+    md_extensions: +east_asian_line_breaks
+    pandoc_args:
+    - --filter
+    - pandoc-crossref
+    reference_docx: ./style/word-styles-02.docx
+  ioslides_presentation:
+    highlight: haddock
+    slide_level: 3
+  beamer_presentation:
+    keep_tex: true
+    latex_engine: xelatex
+    toc: true
+    pandoc_args:
+    - --listing
+    - --filter
+    - pandoc-crossref
+    slide_level: 3
+    template: ./style/beamer-template.tex
+    includes:
+      in_header: author.tex
 csl: ./style/chinese-gb7714-2005-numeric.csl
+css: ./style/markdown.css
+bibliography: Bibfile.bib
+eqnPrefixTemplate: ($$i$$)
+institute: 中南财经政法大学统计与数学学院
 link-citations: true
+linkReferences: true
+chapters: true
+tableEqns: false
+autoEqnLabels: false
 ---
 ```
 
