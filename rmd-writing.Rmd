@@ -2,63 +2,17 @@
 title: "软件相关操作"
 author: "Jin's students"
 date: "2019-03-03"
-output:
-  bookdown::html_document2:
-    fig_caption: true
-    highlight: haddock
-    keep_md: true
-    md_extensions: +east_asian_line_breaks
-    number_sections: true
-    pandoc_args:
-    - --filter
-    - pandoc-crossref
-    - -M
-    - eqnPrefix=
-    seq_numbering: false
-    toc: true
-  bookdown::pdf_document2:
-    keep_tex: true
-    latex_engine: xelatex
-    md_extensions: +east_asian_line_breaks
-    pandoc_args:
-    - --listing
-    - --filter
-    - pandoc-crossref
-    toc: false
-  slidy_presentation:
-    highlight: haddock
-  bookdown::word_document2:
-    fig_caption: true
-    md_extensions: +east_asian_line_breaks
-    pandoc_args:
-    - --filter
-    - pandoc-crossref
-    reference_docx: ./style/word-styles-02.docx
-  ioslides_presentation:
-    highlight: haddock
-    slide_level: 3
-  beamer_presentation:
-    keep_tex: true
-    latex_engine: xelatex
-    toc: true
-    pandoc_args:
-    - --listing
-    - --filter
-    - pandoc-crossref
-    slide_level: 3
-    template: ./style/beamer-template.tex
-    includes:
-      in_header: author.tex
+institute: 中南财经政法大学统计与数学学院
 csl: ./style/chinese-gb7714-2005-numeric.csl
 css: ./style/markdown.css
 bibliography: Bibfile.bib
 eqnPrefixTemplate: ($$i$$)
-institute: 中南财经政法大学统计与数学学院
 link-citations: true
 linkReferences: true
 chapters: true
 tableEqns: false
 autoEqnLabels: false
+classoption: "aspectratio=1610"
 ---
 
 

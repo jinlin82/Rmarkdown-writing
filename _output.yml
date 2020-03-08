@@ -1,0 +1,69 @@
+bookdown::html_document2:
+  fig_caption: true
+  highlight: haddock
+  keep_md: true
+  md_extensions: +east_asian_line_breaks
+  number_sections: true
+  pandoc_args:
+  - --filter
+  - pandoc-crossref
+  - -M
+  - eqnPrefix=
+  seq_numbering: false
+  toc: true
+bookdown::pdf_document2:
+  keep_tex: true
+  latex_engine: xelatex
+  md_extensions: +east_asian_line_breaks
+  pandoc_args:
+  - --listing
+  - --filter
+  - pandoc-crossref
+  toc: false
+slidy_presentation:
+  highlight: haddock
+bookdown::word_document2:
+  fig_caption: true
+  md_extensions: +east_asian_line_breaks
+  pandoc_args:
+  - --filter
+  - pandoc-crossref
+  reference_docx: ./style/word-styles-02.docx
+ioslides_presentation:
+  highlight: haddock
+  slide_level: 3
+beamer_presentation:
+  keep_tex: true
+  latex_engine: xelatex
+  toc: true
+  pandoc_args:
+  - --listing
+  - --filter
+  - pandoc-crossref
+  slide_level: 3
+  template: ./style/beamer-template.tex
+  includes:
+    # in_header: author.tex
+bookdown::gitbook:
+  css: style.css
+  md_extensions: +east_asian_line_breaks
+  config:
+    toc:
+      before: |
+        <li><a href="./">A Minimal Book Example</a></li>
+      after: |
+        <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+    edit: https://github.com/rstudio/bookdown-demo/edit/master/%s
+    download: ["pdf", "epub"]
+bookdown::pdf_book:
+  includes:
+    after_body: backmatters.tex
+  keep_tex: yes
+  toc: true
+  toc_depth: 3
+  latex_engine: xelatex
+  md_extensions: +east_asian_line_breaks
+  template: ./style/bookdown-pdf-template.tex
+  citation_package: natbib
+  pandoc_args: ["--top-level-division=chapter", "--bibliography=Bibfile", "--listing", "--filter", "pandoc-crossref"]
+
