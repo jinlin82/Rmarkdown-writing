@@ -19,6 +19,7 @@ bookdown::pdf_document2:
   - --listing
   - --filter
   - pandoc-crossref
+  template: ./style/default-1.17.0.2.tex
   toc: false
 slidy_presentation:
   highlight: haddock
@@ -43,7 +44,7 @@ beamer_presentation:
   slide_level: 3
   template: ./style/beamer-template.tex
   includes:
-    # in_header: author.tex
+    #in_header: ./beamer-header.tex
 bookdown::gitbook:
   css: style.css
   md_extensions: +east_asian_line_breaks

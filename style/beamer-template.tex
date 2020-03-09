@@ -237,11 +237,6 @@ $endif$
 
 
 
-$for(header-includes)$
-$header-includes$
-$endfor$
-
-
 
 \renewcommand{\contentsname}{\centerline{\textcolor{violet}{目 \ \ 录}}}    % 将Contents改为目录
 \renewcommand{\abstractname}{摘 \ \ 要}      % 将Abstract改为摘要
@@ -367,6 +362,9 @@ $if(subtitle)$
 \subtitle{$subtitle$}
 $endif$
 
+$for(header-includes)$
+$header-includes$
+$endfor$
 
 \begin{document}
 $if(title)$

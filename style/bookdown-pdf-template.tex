@@ -1,0 +1,159 @@
+%\documentclass[UTF8,a4paper,12pt]{znufecls}  % Latex 去掉上面的语句，加上本语句
+\documentclass[doctor,twoside,chapterhead,otf]{znufethesis}
+%\usepackage{gbt7714}
+%======================== 根据选项设置代码处理方式 RMARKDOWN 中独有=============
+$if(listings)$
+\usepackage{listings}
+$endif$
+$if(lhs)$
+\lstnewenvironment{code}{\lstset{language=R,basicstyle=\small\ttfamily}}{}
+$endif$
+$if(highlighting-macros)$
+$highlighting-macros$
+$endif$
+$if(verbatim-in-note)$
+\usepackage{fancyvrb}
+\VerbatimFootnotes % allows verbatim text in footnotes
+$endif$
+
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\newcommand{\passthrough}[1]{\lstset{mathescape=false}#1\lstset{mathescape=true}}
+
+
+
+
+
+%%% Change title format to be more compact
+\usepackage{titling}
+
+% Create subtitle command for use in maketitle
+\newcommand{\subtitle}[1]{
+  \posttitle{
+    \begin{center}\large#1\end{center}
+    }
+}
+
+\setlength{\droptitle}{-2em}
+$if(title)$
+  \title{\LARGE\textbf{$title$}}
+  \pretitle{\vspace{\droptitle}\centering\huge}
+  \posttitle{\par}
+$else$
+  \title{}
+  \pretitle{\vspace{\droptitle}}
+  \posttitle{}
+$endif$
+$if(subtitle)$
+\subtitle{$subtitle$}
+$endif$
+$if(author)$
+  \author{$for(author)$$author$$sep$ \\ $endfor$}
+  \preauthor{\centering\large\emph}
+  \postauthor{\par}
+$else$
+  \author{}
+  \preauthor{}\postauthor{}
+$endif$
+
+$if(date)$
+  \predate{\centering\large\emph}
+  \postdate{\par}
+  \date{$date$}
+$else$
+  \date{}
+  \predate{}\postdate{}
+$endif$
+
+
+
+\begin{document}
+$if(title)$
+\maketitle
+$endif$
+
+\cleardoublepage
+\frontmatter
+\pagestyle{plain}
+
+$if(abstract)$
+\begin{abstract}
+$abstract$
+\end{abstract}
+$endif$
+
+
+
+
+$for(include-before)$
+$include-before$
+
+$endfor$
+
+$if(toc)$
+{
+$if(colorlinks)$
+\hypersetup{linkcolor=$if(toccolor)$$toccolor$$else$black$endif$}
+$endif$
+
+\cleardoublepage
+\frontmatter
+\input{abstract}
+
+\setcounter{tocdepth}{$toc-depth$}
+\cleardoublepage
+\phantomsection %
+\pdfbookmark{\contentsname}{toc}
+\pagenumbering{arabic}
+\tableofcontents        % 生成目录
+}
+$endif$
+
+$if(lot)$
+\cleardoublepage
+\phantomsection %
+\pdfbookmark{表目录}{tabletoc}
+\listoftables           % 如果要生成表目录
+$endif$
+
+$if(lof)$
+\cleardoublepage
+\phantomsection %
+\pdfbookmark{图目录}{figtoc}
+
+\listoffigures          % 如果要生成图目录
+$endif$
+
+\cleardoublepage
+\phantomsection %
+\pdfbookmark{\denotationname}{denotation}
+\pagenumbering{arabic}
+\input{denotation} % 如果要生成符号列表
+
+\mainmatter
+\pagestyle{mpage}
+
+$body$
+
+$if(natbib)$
+$if(bibliography)$
+$if(biblio-title)$
+$if(book-class)$
+\renewcommand\bibname{$biblio-title$}
+$else$
+\renewcommand\refname{$biblio-title$}
+$endif$
+$endif$
+\bibliography{$for(bibliography)$$bibliography$$sep$,$endfor$}
+
+$endif$
+$endif$
+
+$if(biblatex)$
+\printbibliography$if(biblio-title)$[title=$biblio-title$]$endif$
+$endif$
+
+$for(include-after)$
+$include-after$
+$endfor$
+
+\end{document}
