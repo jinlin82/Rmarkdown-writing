@@ -123,6 +123,37 @@ classoption: "aspectratio=1610"
    把项目clone到文件夹中。
 2. 使用git命令操作，可以在Terminal运行git命令。
 
+# article 项目模板
+## 使用方法
+
+1. 模板地址： https://github.com/jinlin82/rmd-article-template
+2. 直接克隆或复制，修改文件夹名称，里面 `.rmd` 文件名称和里面 `yaml header` 部分.
+3. 生成beamer时，修改 `beamer-header.tex` 相应内容.
+
+## 模板文件结构
+
+```
+\---rmd-article-template
+    |   beamer-header.tex
+    |   Bibfile.bib
+    |   rmd-template.Rmd
+    |   znufelogo.jpg
+    |   _bookdown.yml
+    |   _output.yml
+    |   
+    +---codes
+    +---data
+    +---results
+    \---style
+            beamer-template.tex
+            bookdown-pdf-template.tex
+            chinese-gb7714-2005-numeric.csl
+            default-1.17.0.2.tex
+            markdown.css
+            word-styles-01.docx
+            word-styles-02.docx
+```
+
 # 写作准备
 
 每次写之前，以上头文件是不变的，表示设定了具体的环境和规则，只能改变title、
@@ -156,7 +187,7 @@ classoption: "aspectratio=1610"
 注：
 
 1. 每次写作之前，.Rmd、.yml和style文件及其里面所有的文件都要放在一起，
-.yml和style文件夹可以从老的项目中拷过来。
+.yml和style文件夹可以从项目模板中拷过来。
 2. 参考文献中Bibfile与头文件中的bibliography:Bibfile.bib中的Bibfile对应，
 需要自己建立Bibfile.bib文件，与其他所有文件放在一起。
 3. 开头固定格式
@@ -174,7 +205,6 @@ Sys.setlocale("LC_ALL", "Chinese")
 ```
 
 主要内容包含：设置路径、设置中文显示问题，但加载包放在后面具体实施部分，不需要放在此处
-
 
 # 文本注意事项
 1. 注意区分数字0和字母o，数字 1 和 字母 l，特别在数学公式中,如 `$$\begin{array}{l}`
