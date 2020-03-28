@@ -1,16 +1,21 @@
 %\documentclass[UTF8,a4paper,12pt]{znufecls}  % Latex 去掉上面的语句，加上本语句
 \documentclass[doctor,twoside,chapterhead,otf]{znufethesis}
 %\usepackage{gbt7714}
+
+
 %======================== 根据选项设置代码处理方式 RMARKDOWN 中独有=============
 $if(listings)$
 \usepackage{listings}
 $endif$
+
 $if(lhs)$
 \lstnewenvironment{code}{\lstset{language=R,basicstyle=\small\ttfamily}}{}
 $endif$
+
 $if(highlighting-macros)$
 $highlighting-macros$
 $endif$
+
 $if(verbatim-in-note)$
 \usepackage{fancyvrb}
 \VerbatimFootnotes % allows verbatim text in footnotes
@@ -18,10 +23,6 @@ $endif$
 
 \providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \newcommand{\passthrough}[1]{\lstset{mathescape=false}#1\lstset{mathescape=true}}
-
-
-
-
 
 %%% Change title format to be more compact
 \usepackage{titling}
@@ -34,8 +35,9 @@ $endif$
 }
 
 \setlength{\droptitle}{-2em}
+
 $if(title)$
-  \title{\LARGE\textbf{$title$}}
+  \title{$title$}
   \pretitle{\vspace{\droptitle}\centering\huge}
   \posttitle{\par}
 $else$
@@ -43,9 +45,11 @@ $else$
   \pretitle{\vspace{\droptitle}}
   \posttitle{}
 $endif$
+
 $if(subtitle)$
 \subtitle{$subtitle$}
 $endif$
+
 $if(author)$
   \author{$for(author)$$author$$sep$ \\ $endfor$}
   \preauthor{\centering\large\emph}
@@ -65,15 +69,50 @@ $else$
 $endif$
 
 
-
+%% ===============================================================
 \begin{document}
+\phantomsection %
+\pdfbookmark{封面}{cover}
+\IfFileExists{./misc/cover.pdf}{\includepdf[pages=-]{./misc/cover}}{
 $if(title)$
 \maketitle
-$endif$
+$endif$}
 
+\blankpage
+
+$for(include-before)$
+$include-before$
+$endfor$
+
+%% ========================== Frontmatters ========================
+%% -------------- 原创声明-------------
+\cleardoublepage
+\phantomsection %
+\pdfbookmark{声明}{creative}
+\input{./misc/creative}
+\blankpage
+
+%% ------------- 符号列表-------------
 \cleardoublepage
 \frontmatter
 \pagestyle{plain}
+
+\cleardoublepage
+\phantomsection %
+\pdfbookmark{\denotationname}{denotation}
+\pagenumbering{arabic}
+\input{./misc/denotation} % 如果要生成符号列表
+\ifodd\thepage
+\blankpage
+\fi
+
+%% ---------------- 摘要 -------------
+\cleardoublepage
+\frontmatter
+\input{./misc/abstract}
+\ifodd\therealpage
+\blankpage
+\fi
 
 $if(abstract)$
 \begin{abstract}
@@ -81,23 +120,12 @@ $abstract$
 \end{abstract}
 $endif$
 
-
-
-
-$for(include-before)$
-$include-before$
-
-$endfor$
-
+%% ---------------- 目录 ------------
 $if(toc)$
 {
 $if(colorlinks)$
 \hypersetup{linkcolor=$if(toccolor)$$toccolor$$else$black$endif$}
 $endif$
-
-\cleardoublepage
-\frontmatter
-\input{abstract}
 
 \setcounter{tocdepth}{$toc-depth$}
 \cleardoublepage
@@ -105,6 +133,10 @@ $endif$
 \pdfbookmark{\contentsname}{toc}
 \pagenumbering{arabic}
 \tableofcontents        % 生成目录
+
+\ifodd\thepage
+\blankpage
+\fi
 }
 $endif$
 
@@ -113,26 +145,38 @@ $if(lot)$
 \phantomsection %
 \pdfbookmark{表目录}{tabletoc}
 \listoftables           % 如果要生成表目录
+
+\ifodd\thepage
+\blankpage
+\fi
 $endif$
 
 $if(lof)$
 \cleardoublepage
 \phantomsection %
 \pdfbookmark{图目录}{figtoc}
-
 \listoffigures          % 如果要生成图目录
-$endif$
 
-\cleardoublepage
-\phantomsection %
-\pdfbookmark{\denotationname}{denotation}
-\pagenumbering{arabic}
-\input{denotation} % 如果要生成符号列表
+\ifodd\thepage
+\blankpage
+\fi
+$endif$
+%% ==========================================================
 
 \mainmatter
 \pagestyle{mpage}
 
 $body$
+
+\ifodd\thepage
+\blankpage
+\fi
+
+%% ========================= 参考文献 =======================
+\cleardoublepage
+\pagestyle{emptypage}
+\renewcommand{\chapterlabel}{\bibname}
+\bibliographystyle{./style/gbt7714-plain-zuel.bst}
 
 $if(natbib)$
 $if(bibliography)$
@@ -152,8 +196,31 @@ $if(biblatex)$
 \printbibliography$if(biblio-title)$[title=$biblio-title$]$endif$
 $endif$
 
+\ifodd\thepage
+\blankpage
+\fi
+
+%% ========================= Backmatters =============================
+\appendix
+\backmatter
+\cleardoublepage
+\pagestyle{appendixpage}
+\renewcommand{\chapterlabel}{\appendixname} % 设置附录的页眉
+
+%%------------ 程序代码----------------
+\input{./misc/code}
+
+\input{./misc/data}
+%% ==================================================================
 $for(include-after)$
 $include-after$
 $endfor$
+
+%%---------------- 致谢 ---------------
+\cleardoublepage
+\renewcommand{\chapterlabel}{\ackname} % 设置致谢参考文献的页眉
+\input{./misc/ack}
+
+
 
 \end{document}

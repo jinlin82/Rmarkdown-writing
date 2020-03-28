@@ -214,13 +214,27 @@ $if(dir)$
 $endif$
 
 \usepackage[BoldFont,SlantFont]{xeCJK}
+
 \setCJKmainfont[BoldFont=Microsoft YaHei]{SimSun}
 \setCJKsansfont[BoldFont=Microsoft YaHei Bold]{Microsoft YaHei}
 \setCJKromanfont{SimSun}
 \setCJKmonofont{SimSun}
-\setCJKfamilyfont{song}{AdobeSongStd-Light}
-\setCJKfamilyfont{hei}{AdobeHeitiStd-Regular}
-\setCJKfamilyfont{kai}{AdobeKaitiStd-Regular}
+
+\IfFileExists{C:/Windows/Fonts/AdobeSongStd-Light.otf}{
+  \setCJKfamilyfont{song}{AdobeSongStd-Light}}{
+  \setCJKfamilyfont{song}{SimSun}}
+
+\IfFileExists{C:/Windows/Fonts/AdobeHeitiStd-Regular.otf}{
+  \setCJKfamilyfont{hei}{AdobeHeitiStd-Regular}}{
+  \setCJKfamilyfont{hei}{SimHei}}
+
+\IfFileExists{C:/Windows/Fonts/AdobeKaitiStd-Regular.otf}{
+  \setCJKfamilyfont{kai}{AdobeKaitiStd-Regular}}{
+  \setCJKfamilyfont{kai}{SimKai}}
+
+\IfFileExists{C:/Windows/Fonts/AdobeFangsongStd-Regular.otf}{
+  \setCJKfamilyfont{fs}{AdobeFangsongStd-Regular}}{
+  \setCJKfamilyfont{fs}{SimFang}}
 
 $if(author)$
 \author[$for(author)$$author$$sep$ \\ $endfor$]{\CJKfamily{kai}$for(author)$$author$$sep$ \\ $endfor$ \\ jinlin@zuel.edu.cn \\}

@@ -1,3 +1,5 @@
+book_filename: thesis_main
+new_session: yes
 language:
   label:
     fig: '图 '

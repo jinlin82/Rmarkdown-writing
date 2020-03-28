@@ -1,11 +1,27 @@
 \documentclass[UTF8,a4paper,12pt]{ctexart}  % Latex 去掉上面的语句，加上本语句
 \usepackage{xeCJK}
-\setCJKmainfont[BoldFont=AdobeHeitiStd-Regular]{AdobeSongStd-Light}
-\setCJKfamilyfont{song}{AdobeSongStd-Light}
-\setCJKfamilyfont{hei}{AdobeHeitiStd-Regular}
-\setCJKfamilyfont{kai}{AdobeKaitiStd-Regular}
-\setCJKfamilyfont{fs}{Sun Yat-sen Hsingshu}
-% \setCJKmainfont[BoldFont=SimHei]{SimSun}
+
+\IfFileExists{C:/Windows/Fonts/AdobeSongStd-Light.otf}{
+  \setCJKmainfont[BoldFont=AdobeHeitiStd-Regular]{AdobeSongStd-Light}}
+{\setCJKmainfont[BoldFont=SimHei]{SimSun}}
+
+\IfFileExists{C:/Windows/Fonts/AdobeSongStd-Light.otf}{
+  \setCJKfamilyfont{song}{AdobeSongStd-Light}}{
+  \setCJKfamilyfont{song}{SimSun}}
+
+\IfFileExists{C:/Windows/Fonts/AdobeHeitiStd-Regular.otf}{
+  \setCJKfamilyfont{hei}{AdobeHeitiStd-Regular}}{
+  \setCJKfamilyfont{hei}{SimHei}}
+
+\IfFileExists{C:/Windows/Fonts/AdobeKaitiStd-Regular.otf}{
+  \setCJKfamilyfont{kai}{AdobeKaitiStd-Regular}}{
+  \setCJKfamilyfont{kai}{SimKai}}
+
+\IfFileExists{C:/Windows/Fonts/AdobeFangsongStd-Regular.otf}{
+  \setCJKfamilyfont{fs}{AdobeFangsongStd-Regular}}{
+  \setCJKfamilyfont{fs}{SimFang}}
+
+% \setCJKfamilyfont{fs}{Sun Yat-sen Hsingshu}
 
 
 \renewcommand{\contentsname}{\centerline{\textcolor{violet}{目 \ \ 录}}}    % 将Contents改为目录
