@@ -15,6 +15,12 @@ bibliography: Bibfile.bib
 - [X] 把1、等改成1. ，以变成 markdown list
 - [X] bibtexkey设置.png 调整
 
+# 说明
+
+1. 更完整的页面见本项目中的 `README.html` (下载后在浏览器中打开)
+2. 模板支持见项目
+   [rmd-article-template](https://github.com/jinlin82/rmd-article-template) 和项
+   目 [rmd-zuel-thesis-template](https://github.com/jinlin82/rmd-zuel-thesis-template).
 
 # 软件准备
 ## 软件列表
@@ -28,7 +34,7 @@ bibliography: Bibfile.bib
 7. equalx（需要 texlive 支持）
 8. rapidee（用于修改环境变量）
 
-## Windows中更改环境变量
+## Windows系统中环境变量及其修改方法
 
 环境变量一般是指在操作系统中用来指定操作系统运行环境的一些参数，当运行某程序时，除了在当前文
 件夹中寻找外，还会到设置的默认路径中去查找。更改环境变量就是设置"Path"。下面对修改环境变量作
