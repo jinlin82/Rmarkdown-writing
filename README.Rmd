@@ -183,14 +183,12 @@ classoption: "aspectratio=1610"
 2. 参考文献中Bibfile与头文件中的bibliography:Bibfile.bib中的Bibfile对应，
 需要自己建立Bibfile.bib文件，与其他所有文件放在一起。
 3. 开头固定格式
-
-```r
+```{r setup, echo=T}
 knitr::opts_knit$set(root.dir = getwd())
 knitr::opts_chunk$set(echo = FALSE, results = 'hide')
 knitr::opts_chunk$set(warning = FALSE, message=FALSE)
 ```
-
-```r
+```{r prepare, echo=T}
 rm(list=ls())
 options(digits=4)
 options(scipen=100)
@@ -241,8 +239,7 @@ bibliography: baidu.bib #文件（baidu.bib可以改，改成自己参考的文�
 点位数;	`cbind(a1,a2,a3)`#支持同类型的数据，cbind执行的结果如果在有文字的前提下都会转化文本
 6. 只提取代码： 
 
-
-```r
+```{r eval=F, echo=T}
 #library(knitr)
 #setwd(“path”) ##.rmd所在的路径,具体使用时换为包含你的RMD文件的文件夹 
 #purl("stata.rmd", encoding="utf-8") ##stata具体使用时换为要用的RMD文件名,这样可以导出所有rmd里面的程序
@@ -253,24 +250,11 @@ $$y=ax+b$$ {#eq:model1}
 在[@eq:model1] 中，引用上述格式即可自动编号。
 9. 图表编号例子
 
-
-Table: (\#tab:tab1)指标体系明细表
-
-维度       指标名称           变量名称    数据来源       
----------  -----------------  ----------  ---------------
-解释变量   碳价格             DealPrice   碳交易网       
-宏观经济   碳效率指数         TanChange   中证指数       
-           上证指数涨跌幅     SHChange    巨灵金融       
-           道琼斯指数涨跌幅   DJChange    巨灵金融       
-能源价格   德克萨斯原油价格   WTI         巨灵金融       
-           埃克天然气价格     ECO         巨灵金融       
-           纽卡斯尔煤炭价格   NEWC        巨灵金融       
-           天然气价格         Gas         金投网         
-           煤炭价格           Coal        同花顺         
-气候环境   极端天气           ExWeather   天气网         
-           空气质量指数       AQI         CSMAR          
-国际市场   核证减排量         CER         欧洲能源交易所 
-           汇率变动率         ExChange    巨灵金融       
+```{r tab1, eval=T, echo=F, results='markup', cache=F}
+tab1<-read.csv(".\\results\\指标体系明细表.csv")     
+knitr::kable(tab1, row.names =F, align = "l", caption="指标体系明细表",
+     longtable = TRUE, booktabs = TRUE, linesep  = "")
+```
 
 在表\@ref(tab:tab1)中，即可在输出的文档中显示表的序号。此处\@ref(tab: )是固定的，
 tab1根据自己上面程序中```{r tab1}中r后的tab1确定名称
@@ -307,10 +291,9 @@ tab1根据自己上面程序中```{r tab1}中r后的tab1确定名称
     。(注：不要复制到剪贴板以后再新
     建txt文件，这样导入到jabref后会乱码；通过txt文件可以同时导入多条参考文献)
     
-<div class="figure">
-<img src=".\results\zhiwang.png" alt="知网"  />
-<p class="caption">(\#fig:fig1)知网</p>
-</div>
+```{r fig1,eval=T, echo=F,fig.cap="知网",dev="png",results='markup', cache=F}
+knitr::include_graphics(".\\results\\zhiwang.png")
+```
 
     2. Jabref Import 选择默认(所有格式)
     3. remove duplicates
@@ -323,33 +306,29 @@ tab1根据自己上面程序中```{r tab1}中r后的tab1确定名称
 2. 下载的Jabref文件是英文版的，可通过option-preference-general将Jabref环境设置为中文，即language
 右侧框中将E"nglish"改为"simplified Chinese",如图 \@ref(fig:fig2) 所示。此步骤可忽略。
 
-<div class="figure">
-<img src=".\results\language.png" alt="语言设置"  />
-<p class="caption">(\#fig:fig2)语言设置</p>
-</div>
+```{r fig2,eval=T, echo=F,fig.cap="语言设置",dev="png",results='markup', cache=F}
+knitr::include_graphics(".\\results\\language.png")
+```
 
 3. 设置bibtexkey: bibtexkey是文献条目的标识，每篇文献都有唯一的bibtexkey;打开options菜单的preference,
 点击弹出窗口左边的"bib tex key generator"，在第一项"default pattern"可以设置bibtexkey,图 \@ref(fig:fig3) 
 显示设置 `[auto][Year]` ,分别表示”第一作者-年”。
 
-<div class="figure">
-<img src=".\results\bibtexkeyshezhi.png" alt="bibtexkey设置"  />
-<p class="caption">(\#fig:fig3)bibtexkey设置</p>
-</div>
+```{r fig3,eval=T, echo=F,fig.cap="bibtexkey设置",dev="png",results='markup', cache=F}
+knitr::include_graphics(".\\results\\bibtexkeyshezhi.png")
+```
 
 4. 设置文献题录的显示：图 \@ref(fig:fig4) 显示了该bib文件的文献题录，即图中红色框所示内容，为了使界面
 表格简洁，可通过options-preference-entry table columns适当删掉不必要的选项，如图 \@ref(fig:fig5) 所示，
 如要删掉journal,只需选中"journal"框以后点击右侧的"-"即可，同样点击"+"也可增加题录显示内容。
 
-<div class="figure">
-<img src=".\results\wenxiantilu.png" alt="文献题录"  />
-<p class="caption">(\#fig:fig4)文献题录</p>
-</div>
+```{r fig4,eval=T, echo=F,fig.cap="文献题录",dev="png",results='markup', cache=F}
+knitr::include_graphics(".\\results\\wenxiantilu.png")
+```
 
-<div class="figure">
-<img src=".\results\tilushezhi.png" alt="文献题录显示设置"  />
-<p class="caption">(\#fig:fig5)文献题录显示设置</p>
-</div>
+```{r fig5,eval=T, echo=F,fig.cap="文献题录显示设置",dev="png",results='markup', cache=F}
+knitr::include_graphics(".\\results\\tilushezhi.png")
+```
 
 5. 相关设置完成之后，点击菜单栏中的"+"即可新增一条记录，出现图 \@ref(fig:fig6) 所示的对话框，下面以增加
 "加权马尔科夫AR_GARCH_GED模型在降水量中的预测"为例，进行说明，由于该文章属于期刊论文，故选择"Article",
@@ -359,33 +338,28 @@ tab1根据自己上面程序中```{r tab1}中r后的tab1确定名称
 即可出现如图 \@ref(fig:fig9)所示的内容；英文文献可用链接"https://www.bing.com/academic?mkt=zh-CN&mkt=zh-CN"
 进行搜索，搜索成功以后点击"Download citation"即可下载参考bibtex。）
 
-<div class="figure">
-<img src=".\results\zengbib.png" alt="新增bib文件"  />
-<p class="caption">(\#fig:fig6)新增bib文件</p>
-</div>
+```{r fig6,eval=T, echo=F,fig.cap="新增bib文件",dev="png",results='markup', cache=F}
+knitr::include_graphics(".\\results\\zengbib.png")
+```
 
-<div class="figure">
-<img src=".\results\xiewenxian.png" alt="填写文献信息"  />
-<p class="caption">(\#fig:fig7)填写文献信息</p>
-</div>
+```{r fig7,eval=T, echo=F,fig.cap="填写文献信息",dev="png",results='markup', cache=F}
+knitr::include_graphics(".\\results\\xiewenxian.png")
+```
 
-<div class="figure">
-<img src=".\results\wenxianshengcheng.png" alt="文献信息生成"  />
-<p class="caption">(\#fig:fig8)文献信息生成</p>
-</div>
+```{r fig8,eval=T, echo=F,fig.cap="文献信息生成",dev="png",results='markup', cache=F}
+knitr::include_graphics(".\\results\\wenxianshengcheng.png")
+```
 
-<div class="figure">
-<img src=".\results\baidu.png" alt="百度学术"  />
-<p class="caption">(\#fig:fig9)百度学术</p>
-</div>
+```{r fig9,eval=T, echo=F,fig.cap="百度学术",dev="png",results='markup', cache=F}
+knitr::include_graphics(".\\results\\baidu.png")
+```
 
 6. 第3步中设置的bibtexkey此时还未起作用，需要手动更新：点击其中一条文献，然后按crtl+A全选，点击tool-autogen
 erate bib tex key,或者直接点击图 \@ref(fig:fig10) 菜单栏中的"钥匙"，则全部bibtexkey都得到更新。
 
-<div class="figure">
-<img src=".\results\yaoshi.png" alt="钥匙"  />
-<p class="caption">(\#fig:fig10)钥匙</p>
-</div>
+```{r fig10,eval=T, echo=F,fig.cap="钥匙",dev="png",results='markup', cache=F}
+knitr::include_graphics(".\\results\\yaoshi.png")
+```
 
 注：jabref设置环境变量
 
@@ -400,19 +374,17 @@ name输入JAVA_HOME，点击ok，返回user variables窗口，输入jre所在的
 2.转码：若Jabref输出的csv文件乱码，则用记事本打开该csv文件，并选择编码方式为ANSI，如图 \@ref(fig:fig1-0) 所示。
 excel打开csv文件默认编码方式为uf-8，所以一旦出现乱码，可以选择ANSI转码。
 
-<div class="figure">
-<img src=".\results\recode.png" alt="ANSI编码"  />
-<p class="caption">(\#fig:fig1-0)ANSI编码</p>
-</div>
+```{r fig1-0,eval=T, echo=F,fig.cap="ANSI编码",dev="png",results='markup', cache=F}
+knitr::include_graphics(".\\results\\recode.png")
+```
 
 3.打开转码后的csv文件，增加用于论文参考文献引用的bibtexkey列,即 `[@authoryear]` ，整理好之后，
 可直接在论文中相应位置复制粘贴，不易出错。如图 \@ref(fig:fig1-1) 所示，
 引用bibtexkey的位置即为论文中注明参考文献顺序的角标的位置。
 
-<div class="figure">
-<img src=".\results\bibtexkey.png" alt="bibtexkey"  />
-<p class="caption">(\#fig:fig1-1)bibtexkey</p>
-</div>
+```{r fig1-1,eval=T, echo=F,fig.cap="bibtexkey",dev="png",results='markup', cache=F}
+knitr::include_graphics(".\\results\\bibtexkey.png")
+```
 
 ## 如何运用VSCODE在论文中引用参考文献
 
@@ -433,10 +405,9 @@ excel打开csv文件默认编码方式为uf-8，所以一旦出现乱码，可�
 
 在header文件中增加`nocite: '@*'`，如图\ref(fig:fig1-2)所示
 
-<div class="figure">
-<img src=".\results\notice.png" alt="notice"  />
-<p class="caption">(\#fig:fig1-2)notice</p>
-</div>
+```{r fig1-2,eval=T, echo=F,fig.cap="notice",dev="png",results='markup', cache=F}
+knitr::include_graphics(".\\results\\notice.png")
+```
 
 # Equalx的设置和用法
 
@@ -445,10 +416,9 @@ excel打开csv文件默认编码方式为uf-8，所以一旦出现乱码，可�
 注：装Equalx之前需要下载texlive），之后点击ghostscript后的change，找到gswin32c.exe所在
 的路径（注：修改之前需要下载gs）,如图\@ref(fig:fig11) 所示。
 
-<div class="figure">
-<img src=".\results\Equalx.png" alt="Equalx安装"  />
-<p class="caption">(\#fig:fig11)Equalx安装</p>
-</div>
+```{r fig11,eval=T, echo=F,fig.cap="Equalx安装",dev="png",results='markup', cache=F}
+knitr::include_graphics(".\\results\\Equalx.png")
+```
 
 edit→prefrences→editor，family选择Consolas，size选择14，字体可以调大一点
 
@@ -468,27 +438,24 @@ edit→prefrences→Preview，Automatic after □ milliseconds，□中输入500
 文档中的公式转化为LaTex公式。
 注：若安装不成功，卸掉重新安装mathtype即可。
 
-<div class="figure">
-<img src=".\results\Mathtype.png" alt="Mathtype安装"  />
-<p class="caption">(\#fig:fig12)Mathtype安装</p>
-</div>
+```{r fig12,eval=T, echo=F,fig.cap="Mathtype安装",dev="png",results='markup', cache=F}
+knitr::include_graphics(".\\results\\Mathtype.png")
+```
 
 # Rstudio生成bookdown pdf步骤
 
 1. 点击菜单 build -> config build tools...
 2. site directory 要设置为 index.rmd 所在的文件夹，如图 \@ref(fig:fig13) 所示，设置好确认即可。
 
-<div class="figure">
-<img src=".\results\BuildTools.png" alt="Build Tools设置"  />
-<p class="caption">(\#fig:fig13)Build Tools设置</p>
-</div>
+```{r fig13,eval=T, echo=F,fig.cap="Build Tools设置",dev="png",results='markup', cache=F}
+knitr::include_graphics(".\\results\\BuildTools.png")
+```
 
 3. 然后点击右上角的build按钮,点击Build Book，选择第二个，如图 \@ref(fig:fig14)即可生成pdf。
 
-<div class="figure">
-<img src=".\results\bookdown.png" alt="bookdown选择"  />
-<p class="caption">(\#fig:fig14)bookdown选择</p>
-</div>
+```{r fig14,eval=T, echo=F,fig.cap="bookdown选择",dev="png",results='markup', cache=F}
+knitr::include_graphics(".\\results\\bookdown.png")
+```
 
 注意：出错后要删除gamm main.md 文件，再重新build.
 
