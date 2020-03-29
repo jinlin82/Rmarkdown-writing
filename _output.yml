@@ -9,7 +9,7 @@ bookdown::html_document2:
   - pandoc-crossref
   - -M
   - eqnPrefix=
-  seq_numbering: false
+  seq_numbering: true 
   toc: true
 bookdown::pdf_document2:
   keep_tex: true
