@@ -7,6 +7,50 @@ css: ./style/markdown.css
 bibliography: Bibfile.bib
 ---
 
+<!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-refresh-toc -->
+**Table of Contents**
+
+- [说明](#说明)
+- [Windows系统中环境变量及其修改方法](#windows系统中环境变量及其修改方法)
+    - [环境变量](#环境变量)
+    - [Windows 系统中环境变量修改方法](#windows-系统中环境变量修改方法)
+        - [修改方法一：使用命令行](#修改方法一：使用命令行)
+        - [修改方法二：使用 Rapidee 软件](#修改方法二：使用-rapidee-软件)
+        - [修改方法三：使用鼠标操作](#修改方法三：使用鼠标操作)
+- [软件准备](#软件准备)
+    - [软件列表](#软件列表)
+    - [安装pandoc](#安装pandoc)
+    - [安装Git程序并设置环境变量](#安装git程序并设置环境变量)
+- [GitHub相关操作](#github相关操作)
+    - [注册](#注册)
+    - [GitHub嵌入Rstudio中需要做的工作](#github嵌入rstudio中需要做的工作)
+        - [Rstudio中设置](#rstudio中设置)
+    - [克隆项目：如何在Rstudio中克隆项目](#克隆项目：如何在rstudio中克隆项目)
+    - [合作者步骤](#合作者步骤)
+    - [创建项目：把本地文件夹用git控制并push到Github的步骤](#创建项目：把本地文件夹用git控制并push到github的步骤)
+- [article 项目模板](#article-项目模板)
+    - [使用方法](#使用方法)
+    - [模板文件结构](#模板文件结构)
+- [写作准备](#写作准备)
+- [文本注意事项](#文本注意事项)
+- [代码注意事项](#代码注意事项)
+- [编码注意事项](#编码注意事项)
+- [Bib文件如何整理](#bib文件如何整理)
+    - [参考文献管理软件 Jabref](#参考文献管理软件-jabref)
+        - [功能](#功能)
+        - [安装](#安装)
+        - [知网文献导入步骤](#知网文献导入步骤)
+        - [Jabref操作](#jabref操作)
+    - [整理bib文件注意事项](#整理bib文件注意事项)
+    - [如何运用VSCODE在论文中引用参考文献](#如何运用vscode在论文中引用参考文献)
+    - [参考文献列出所有bib文件中条目方法](#参考文献列出所有bib文件中条目方法)
+- [Equalx的设置和用法](#equalx的设置和用法)
+- [Mathtype的设置和用法](#mathtype的设置和用法)
+- [Rstudio生成bookdown pdf步骤](#rstudio生成bookdown-pdf步骤)
+- [参考文献](#参考文献)
+
+<!-- markdown-toc end -->
+
 
 **TODO**
 

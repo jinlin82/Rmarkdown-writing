@@ -21,6 +21,7 @@ bookdown::pdf_document2:
   - pandoc-crossref
   template: ./style/default-1.17.0.2.tex
   toc: false
+  citation_package: natbib
 slidy_presentation:
   highlight: haddock
 bookdown::word_document2:

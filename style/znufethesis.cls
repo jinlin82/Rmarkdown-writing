@@ -206,22 +206,22 @@
 
 \IfFileExists{C:/Windows/Fonts/AdobeSongStd-Light.otf}{
   \setCJKfamilyfont{song}{AdobeSongStd-Light}}{
-  \setCJKfamilyfont{song}{SimSun}}
+  \setCJKfamilyfont{song}{SimSun.ttc}}
 
 \IfFileExists{C:/Windows/Fonts/AdobeHeitiStd-Regular.otf}{
   \setCJKfamilyfont{hei}[BoldFont={AdobeHeitiStd-Regular},ItalicFont={AdobeKaitiStd-Regular}]{AdobeHeitiStd-Regular}}{
-  \setCJKfamilyfont{hei}{SimHei}}
+  \setCJKfamilyfont{hei}{SimHei.ttf}}
 
 \IfFileExists{C:/Windows/Fonts/AdobeKaitiStd-Regular.otf}{
   \setCJKfamilyfont{kai}{AdobeKaitiStd-Regular}
   \setCJKfamilyfont{li}{AdobeKaitiStd-Regular}
   \setCJKfamilyfont{you}{AdobeKaitiStd-Regular}
   }{
-  \setCJKfamilyfont{kai}{SimKai}}
+  \setCJKfamilyfont{kai}{SimKai.ttf}}
 
 \IfFileExists{C:/Windows/Fonts/AdobeFangsongStd-Regular.otf}{
   \setCJKfamilyfont{fs}{AdobeFangsongStd-Regular}}{
-  \setCJKfamilyfont{fs}{SimFang}}
+  \setCJKfamilyfont{fs}{SimFang.ttf}}
 
 % \setCJKfamilyfont{fs}{Sun Yat-sen Hsingshu}
 
