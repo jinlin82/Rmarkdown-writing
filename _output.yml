@@ -42,6 +42,7 @@ beamer_presentation:
   - --listing
   - --filter
   - pandoc-crossref
+  citation_package: natbib
   slide_level: 3
   template: ./style/beamer-template.tex
   includes:

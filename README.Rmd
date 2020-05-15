@@ -2,7 +2,7 @@
 title: "软件相关操作"
 author: "Jin's students"
 date: "2019-03-03"
-csl: ./style/chinese-gb7714-2005-numeric.csl
+csl: ./style/chinese-gb7714-2015-numeric.csl
 css: ./style/markdown.css
 bibliography: Bibfile.bib
 ---

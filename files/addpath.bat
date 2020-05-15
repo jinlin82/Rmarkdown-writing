@@ -5,4 +5,5 @@ for /f "usebackq tokens=2,*" %%A in (`%SystemRoot%\System32\reg.exe query HKCU\E
 echo. && echo User Path: && echo --------------------------------------
 for %%a in ("%my_user_path:;=" "%") do echo %%a
 
+echo.
 pause

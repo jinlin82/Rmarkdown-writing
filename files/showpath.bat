@@ -7,4 +7,5 @@ for /f "usebackq tokens=2,*" %%A in (`%SystemRoot%\System32\reg.exe query "HKLM\
 echo. && echo System Path: && echo --------------------------------------
 for %%a in ("%system_path:;=" "%") do echo %%a
 
+echo.
 pause
