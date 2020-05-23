@@ -41,7 +41,7 @@ bibliography: Bibfile.bib
         - [安装](#安装)
         - [知网文献导入步骤](#知网文献导入步骤)
         - [Jabref操作](#jabref操作)
-    - [整理bib文件注意事项](#整理bib文件注意事项)
+    - [~~整理bib文件注意事项~~](#整理bib文件注意事项)
     - [如何运用VSCODE在论文中引用参考文献](#如何运用vscode在论文中引用参考文献)
     - [参考文献列出所有bib文件中条目方法](#参考文献列出所有bib文件中条目方法)
 - [Equalx的设置和用法](#equalx的设置和用法)
@@ -444,7 +444,9 @@ knitr::include_graphics(".\\results\\yaoshi.png")
 name输入JAVA_HOME，点击ok，返回user variables窗口，输入jre所在的路径。需要注意的是jabref
 和jre需要保持相同的版本，都安装32位或者64位（建议64位）的。
 
-## 整理bib文件注意事项
+## ~~整理bib文件注意事项~~
+
+**注意:不再推荐使用此方法，直接使用下面的“如何运用VSCODE在论文中引用参考文献”**
 
 1.在Jabref里面整理好bib文件以后，依次导出Bibfile.bib文件和Bibfile.csv文件;
 

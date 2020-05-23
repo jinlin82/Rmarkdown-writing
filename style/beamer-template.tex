@@ -264,7 +264,7 @@ $endif$
 \renewcommand{\today}{\number\year 年 \number\month 月 \number\day 日}
 
 \PassOptionsToPackage{dvipsnames}{xcolor}
-\PassOptionsToPackage{colorlinks=true,citecolor=blue, urlcolor=blue, linkcolor=violet, bookmarksdepth=4}{hyperref}
+\PassOptionsToPackage{colorlinks=true,citecolor=blue, urlcolor=blue, linkcolor=violet, bookmarksdepth=4,bookmarksopen=true,bookmarksopenlevel=2}{hyperref}
 
 \usepackage{lscape}
 \usepackage{indentfirst}
@@ -400,7 +400,7 @@ $include-before$
 
 $endfor$
 $if(toc)$
-\begin{frame}
+\begin{frame}{\textcolor{violet}{\normalfont\Large \CJKfamily{kai}大\ \ 纲 }} \textcolor{violet}{}
 \tableofcontents[hideallsubsections]
 \end{frame}
 
@@ -411,11 +411,17 @@ $if(natbib)$
 $if(bibliography)$
 $if(biblio-title)$
 $if(book-class)$
+
 \renewcommand\bibname{$biblio-title$}
+\begin{frame}[allowframebreaks]{$biblio-title$}
+\footnotesize\CJKfamily{song}
+%\bibliographytrue
+\bibliography{$for(bibliography)$$bibliography$$sep$,$endfor$}
+\end{frame}
+
 $else$
+
 \renewcommand\refname{$biblio-title$}
-$endif$
-$endif$
 \begin{frame}[allowframebreaks]{$biblio-title$}
 \footnotesize\CJKfamily{song}
 %\bibliographytrue
@@ -424,18 +430,21 @@ $endif$
 
 $endif$
 $endif$
+$endif$
+$endif$
+
 $if(biblatex)$
 \begin{frame}[allowframebreaks]{$biblio-title$}
 \footnotesize\CJKfamily{song}
 %\bibliographytrue
 \printbibliography[heading=none]
 \end{frame}
-
 $endif$
+
 $for(include-after)$
 $include-after$
-
 $endfor$
+
 \end{document}
 
 

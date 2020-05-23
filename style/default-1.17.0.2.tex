@@ -32,7 +32,7 @@
 \renewcommand{\today}{\number\year 年 \number\month 月 \number\day 日}
 
 \usepackage[dvipsnames]{xcolor}
-\PassOptionsToPackage{colorlinks=true,citecolor=blue, urlcolor=blue, linkcolor=violet, bookmarksdepth=4}{hyperref}
+\PassOptionsToPackage{colorlinks=true,citecolor=blue, urlcolor=blue, linkcolor=violet, bookmarksdepth=4,bookmarksnumbered=true,bookmarksopen=true,bookmarksopenlevel=2}{hyperref}
 
 \usepackage{lscape}
 \usepackage{indentfirst}
@@ -260,14 +260,19 @@ $endif$
 
 $body$
 
+
 $if(natbib)$
 $if(bibliography)$
 
 $if(biblio-title)$
 $if(book-class)$
 \renewcommand\bibname{$biblio-title$}
+\phantomsection %
+\pdfbookmark{\bibfname}{reference}
 $else$
 \renewcommand\refname{$biblio-title$}
+\phantomsection %
+\pdfbookmark{\refname}{reference}
 $endif$
 $endif$
 

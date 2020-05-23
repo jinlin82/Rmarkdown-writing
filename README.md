@@ -2,7 +2,7 @@
 title: "软件相关操作"
 author: "Jin's students"
 date: "2019-03-03"
-csl: ./style/chinese-gb7714-2005-numeric.csl
+csl: ./style/chinese-gb7714-2015-numeric.csl
 css: ./style/markdown.css
 bibliography: Bibfile.bib
 ---
@@ -41,7 +41,7 @@ bibliography: Bibfile.bib
         - [安装](#安装)
         - [知网文献导入步骤](#知网文献导入步骤)
         - [Jabref操作](#jabref操作)
-    - [整理bib文件注意事项](#整理bib文件注意事项)
+    - [~~整理bib文件注意事项~~](#整理bib文件注意事项)
     - [如何运用VSCODE在论文中引用参考文献](#如何运用vscode在论文中引用参考文献)
     - [参考文献列出所有bib文件中条目方法](#参考文献列出所有bib文件中条目方法)
 - [Equalx的设置和用法](#equalx的设置和用法)
@@ -385,7 +385,7 @@ tab1根据自己上面程序中```{r tab1}中r后的tab1确定名称
     建txt文件，这样导入到jabref后会乱码；通过txt文件可以同时导入多条参考文献)
     
 <div class="figure">
-<img src=".\results\zhiwang.png" alt="知网"  />
+<img src=".\results\zhiwang.png" alt="知网" width="739" />
 <p class="caption">(\#fig:fig1)知网</p>
 </div>
 
@@ -401,7 +401,7 @@ tab1根据自己上面程序中```{r tab1}中r后的tab1确定名称
 右侧框中将E"nglish"改为"simplified Chinese",如图 \@ref(fig:fig2) 所示。此步骤可忽略。
 
 <div class="figure">
-<img src=".\results\language.png" alt="语言设置"  />
+<img src=".\results\language.png" alt="语言设置" width="1086" />
 <p class="caption">(\#fig:fig2)语言设置</p>
 </div>
 
@@ -410,7 +410,7 @@ tab1根据自己上面程序中```{r tab1}中r后的tab1确定名称
 显示设置 `[auto][Year]` ,分别表示”第一作者-年”。
 
 <div class="figure">
-<img src=".\results\bibtexkeyshezhi.png" alt="bibtexkey设置"  />
+<img src=".\results\bibtexkeyshezhi.png" alt="bibtexkey设置" width="449" />
 <p class="caption">(\#fig:fig3)bibtexkey设置</p>
 </div>
 
@@ -419,12 +419,12 @@ tab1根据自己上面程序中```{r tab1}中r后的tab1确定名称
 如要删掉journal,只需选中"journal"框以后点击右侧的"-"即可，同样点击"+"也可增加题录显示内容。
 
 <div class="figure">
-<img src=".\results\wenxiantilu.png" alt="文献题录"  />
+<img src=".\results\wenxiantilu.png" alt="文献题录" width="1269" />
 <p class="caption">(\#fig:fig4)文献题录</p>
 </div>
 
 <div class="figure">
-<img src=".\results\tilushezhi.png" alt="文献题录显示设置"  />
+<img src=".\results\tilushezhi.png" alt="文献题录显示设置" width="761" />
 <p class="caption">(\#fig:fig5)文献题录显示设置</p>
 </div>
 
@@ -437,22 +437,22 @@ tab1根据自己上面程序中```{r tab1}中r后的tab1确定名称
 进行搜索，搜索成功以后点击"Download citation"即可下载参考bibtex。）
 
 <div class="figure">
-<img src=".\results\zengbib.png" alt="新增bib文件"  />
+<img src=".\results\zengbib.png" alt="新增bib文件" width="361" />
 <p class="caption">(\#fig:fig6)新增bib文件</p>
 </div>
 
 <div class="figure">
-<img src=".\results\xiewenxian.png" alt="填写文献信息"  />
+<img src=".\results\xiewenxian.png" alt="填写文献信息" width="883" />
 <p class="caption">(\#fig:fig7)填写文献信息</p>
 </div>
 
 <div class="figure">
-<img src=".\results\wenxianshengcheng.png" alt="文献信息生成"  />
+<img src=".\results\wenxianshengcheng.png" alt="文献信息生成" width="1357" />
 <p class="caption">(\#fig:fig8)文献信息生成</p>
 </div>
 
 <div class="figure">
-<img src=".\results\baidu.png" alt="百度学术"  />
+<img src=".\results\baidu.png" alt="百度学术" width="392" />
 <p class="caption">(\#fig:fig9)百度学术</p>
 </div>
 
@@ -460,7 +460,7 @@ tab1根据自己上面程序中```{r tab1}中r后的tab1确定名称
 erate bib tex key,或者直接点击图 \@ref(fig:fig10) 菜单栏中的"钥匙"，则全部bibtexkey都得到更新。
 
 <div class="figure">
-<img src=".\results\yaoshi.png" alt="钥匙"  />
+<img src=".\results\yaoshi.png" alt="钥匙" width="303" />
 <p class="caption">(\#fig:fig10)钥匙</p>
 </div>
 
@@ -470,7 +470,9 @@ erate bib tex key,或者直接点击图 \@ref(fig:fig10) 菜单栏中的"钥匙"
 name输入JAVA_HOME，点击ok，返回user variables窗口，输入jre所在的路径。需要注意的是jabref
 和jre需要保持相同的版本，都安装32位或者64位（建议64位）的。
 
-## 整理bib文件注意事项
+## ~~整理bib文件注意事项~~
+
+**注意:不再推荐使用此方法，直接使用下面的“如何运用VSCODE在论文中引用参考文献”**
 
 1.在Jabref里面整理好bib文件以后，依次导出Bibfile.bib文件和Bibfile.csv文件;
 
@@ -478,7 +480,7 @@ name输入JAVA_HOME，点击ok，返回user variables窗口，输入jre所在的
 excel打开csv文件默认编码方式为uf-8，所以一旦出现乱码，可以选择ANSI转码。
 
 <div class="figure">
-<img src=".\results\recode.png" alt="ANSI编码"  />
+<img src=".\results\recode.png" alt="ANSI编码" width="558" />
 <p class="caption">(\#fig:fig1-0)ANSI编码</p>
 </div>
 
@@ -487,7 +489,7 @@ excel打开csv文件默认编码方式为uf-8，所以一旦出现乱码，可�
 引用bibtexkey的位置即为论文中注明参考文献顺序的角标的位置。
 
 <div class="figure">
-<img src=".\results\bibtexkey.png" alt="bibtexkey"  />
+<img src=".\results\bibtexkey.png" alt="bibtexkey" width="598" />
 <p class="caption">(\#fig:fig1-1)bibtexkey</p>
 </div>
 
@@ -511,7 +513,7 @@ excel打开csv文件默认编码方式为uf-8，所以一旦出现乱码，可�
 在header文件中增加`nocite: '@*'`，如图\ref(fig:fig1-2)所示
 
 <div class="figure">
-<img src=".\results\notice.png" alt="notice"  />
+<img src=".\results\notice.png" alt="notice" width="379" />
 <p class="caption">(\#fig:fig1-2)notice</p>
 </div>
 
@@ -523,7 +525,7 @@ excel打开csv文件默认编码方式为uf-8，所以一旦出现乱码，可�
 的路径（注：修改之前需要下载gs）,如图\@ref(fig:fig11) 所示。
 
 <div class="figure">
-<img src=".\results\Equalx.png" alt="Equalx安装"  />
+<img src=".\results\Equalx.png" alt="Equalx安装" width="526" />
 <p class="caption">(\#fig:fig11)Equalx安装</p>
 </div>
 
@@ -546,7 +548,7 @@ edit→prefrences→Preview，Automatic after □ milliseconds，□中输入500
 注：若安装不成功，卸掉重新安装mathtype即可。
 
 <div class="figure">
-<img src=".\results\Mathtype.png" alt="Mathtype安装"  />
+<img src=".\results\Mathtype.png" alt="Mathtype安装" width="667" />
 <p class="caption">(\#fig:fig12)Mathtype安装</p>
 </div>
 
@@ -556,14 +558,14 @@ edit→prefrences→Preview，Automatic after □ milliseconds，□中输入500
 2. site directory 要设置为 index.rmd 所在的文件夹，如图 \@ref(fig:fig13) 所示，设置好确认即可。
 
 <div class="figure">
-<img src=".\results\BuildTools.png" alt="Build Tools设置"  />
+<img src=".\results\BuildTools.png" alt="Build Tools设置" width="798" />
 <p class="caption">(\#fig:fig13)Build Tools设置</p>
 </div>
 
 3. 然后点击右上角的build按钮,点击Build Book，选择第二个，如图 \@ref(fig:fig14)即可生成pdf。
 
 <div class="figure">
-<img src=".\results\bookdown.png" alt="bookdown选择"  />
+<img src=".\results\bookdown.png" alt="bookdown选择" width="1023" />
 <p class="caption">(\#fig:fig14)bookdown选择</p>
 </div>
 
