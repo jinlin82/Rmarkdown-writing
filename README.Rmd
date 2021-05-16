@@ -328,7 +328,7 @@ $$y=ax+b$$ {#eq:model1}
 9. 图表编号例子
 
 ```{r tab1, eval=T, echo=F, results='markup', cache=F}
-tab1<-read.csv(".\\results\\指标体系明细表.csv")     
+tab1<-read.csv("./results/指标体系明细表.csv")     
 knitr::kable(tab1, row.names =F, align = "l", caption="指标体系明细表",
      longtable = TRUE, booktabs = TRUE, linesep  = "")
 ```
@@ -369,7 +369,7 @@ tab1根据自己上面程序中```{r tab1}中r后的tab1确定名称
     建txt文件，这样导入到jabref后会乱码；通过txt文件可以同时导入多条参考文献)
     
 ```{r fig1,eval=T, echo=F,fig.cap="知网",dev="png",results='markup', cache=F}
-knitr::include_graphics(".\\results\\zhiwang.png")
+knitr::include_graphics("./results/zhiwang.png")
 ```
 
     2. Jabref Import 选择默认(所有格式)
@@ -384,7 +384,7 @@ knitr::include_graphics(".\\results\\zhiwang.png")
 右侧框中将E"nglish"改为"simplified Chinese",如图 \@ref(fig:fig2) 所示。此步骤可忽略。
 
 ```{r fig2,eval=T, echo=F,fig.cap="语言设置",dev="png",results='markup', cache=F}
-knitr::include_graphics(".\\results\\language.png")
+knitr::include_graphics("./results/language.png")
 ```
 
 3. 设置bibtexkey: bibtexkey是文献条目的标识，每篇文献都有唯一的bibtexkey;打开options菜单的preference,
@@ -392,7 +392,7 @@ knitr::include_graphics(".\\results\\language.png")
 显示设置 `[auto][Year]` ,分别表示”第一作者-年”。
 
 ```{r fig3,eval=T, echo=F,fig.cap="bibtexkey设置",dev="png",results='markup', cache=F}
-knitr::include_graphics(".\\results\\bibtexkeyshezhi.png")
+knitr::include_graphics("./results/bibtexkeyshezhi.png")
 ```
 
 4. 设置文献题录的显示：图 \@ref(fig:fig4) 显示了该bib文件的文献题录，即图中红色框所示内容，为了使界面
@@ -400,11 +400,11 @@ knitr::include_graphics(".\\results\\bibtexkeyshezhi.png")
 如要删掉journal,只需选中"journal"框以后点击右侧的"-"即可，同样点击"+"也可增加题录显示内容。
 
 ```{r fig4,eval=T, echo=F,fig.cap="文献题录",dev="png",results='markup', cache=F}
-knitr::include_graphics(".\\results\\wenxiantilu.png")
+knitr::include_graphics("./results/wenxiantilu.png")
 ```
 
 ```{r fig5,eval=T, echo=F,fig.cap="文献题录显示设置",dev="png",results='markup', cache=F}
-knitr::include_graphics(".\\results\\tilushezhi.png")
+knitr::include_graphics("./results/tilushezhi.png")
 ```
 
 5. 相关设置完成之后，点击菜单栏中的"+"即可新增一条记录，出现图 \@ref(fig:fig6) 所示的对话框，下面以增加
@@ -416,26 +416,26 @@ knitr::include_graphics(".\\results\\tilushezhi.png")
 进行搜索，搜索成功以后点击"Download citation"即可下载参考bibtex。）
 
 ```{r fig6,eval=T, echo=F,fig.cap="新增bib文件",dev="png",results='markup', cache=F}
-knitr::include_graphics(".\\results\\zengbib.png")
+knitr::include_graphics("./results/zengbib.png")
 ```
 
 ```{r fig7,eval=T, echo=F,fig.cap="填写文献信息",dev="png",results='markup', cache=F}
-knitr::include_graphics(".\\results\\xiewenxian.png")
+knitr::include_graphics("./results/xiewenxian.png")
 ```
 
 ```{r fig8,eval=T, echo=F,fig.cap="文献信息生成",dev="png",results='markup', cache=F}
-knitr::include_graphics(".\\results\\wenxianshengcheng.png")
+knitr::include_graphics("./results/wenxianshengcheng.png")
 ```
 
 ```{r fig9,eval=T, echo=F,fig.cap="百度学术",dev="png",results='markup', cache=F}
-knitr::include_graphics(".\\results\\baidu.png")
+knitr::include_graphics("./results/baidu.png")
 ```
 
 6. 第3步中设置的bibtexkey此时还未起作用，需要手动更新：点击其中一条文献，然后按crtl+A全选，点击tool-autogen
 erate bib tex key,或者直接点击图 \@ref(fig:fig10) 菜单栏中的"钥匙"，则全部bibtexkey都得到更新。
 
 ```{r fig10,eval=T, echo=F,fig.cap="钥匙",dev="png",results='markup', cache=F}
-knitr::include_graphics(".\\results\\yaoshi.png")
+knitr::include_graphics("./results/yaoshi.png")
 ```
 
 注：jabref设置环境变量
@@ -454,7 +454,7 @@ name输入JAVA_HOME，点击ok，返回user variables窗口，输入jre所在的
 excel打开csv文件默认编码方式为uf-8，所以一旦出现乱码，可以选择ANSI转码。
 
 ```{r fig1-0,eval=T, echo=F,fig.cap="ANSI编码",dev="png",results='markup', cache=F}
-knitr::include_graphics(".\\results\\recode.png")
+knitr::include_graphics("./results/recode.png")
 ```
 
 3.打开转码后的csv文件，增加用于论文参考文献引用的bibtexkey列,即 `[@authoryear]` ，整理好之后，
@@ -462,7 +462,7 @@ knitr::include_graphics(".\\results\\recode.png")
 引用bibtexkey的位置即为论文中注明参考文献顺序的角标的位置。
 
 ```{r fig1-1,eval=T, echo=F,fig.cap="bibtexkey",dev="png",results='markup', cache=F}
-knitr::include_graphics(".\\results\\bibtexkey.png")
+knitr::include_graphics("./results/bibtexkey.png")
 ```
 
 ## 如何运用VSCODE在论文中引用参考文献
@@ -485,7 +485,7 @@ knitr::include_graphics(".\\results\\bibtexkey.png")
 在header文件中增加`nocite: '@*'`，如图\ref(fig:fig1-2)所示
 
 ```{r fig1-2,eval=T, echo=F,fig.cap="notice",dev="png",results='markup', cache=F}
-knitr::include_graphics(".\\results\\notice.png")
+knitr::include_graphics("./results/notice.png")
 ```
 
 # Equalx的设置和用法
@@ -496,7 +496,7 @@ knitr::include_graphics(".\\results\\notice.png")
 的路径（注：修改之前需要下载gs）,如图\@ref(fig:fig11) 所示。
 
 ```{r fig11,eval=T, echo=F,fig.cap="Equalx安装",dev="png",results='markup', cache=F}
-knitr::include_graphics(".\\results\\Equalx.png")
+knitr::include_graphics("./results/Equalx.png")
 ```
 
 edit→prefrences→editor，family选择Consolas，size选择14，字体可以调大一点
@@ -518,7 +518,7 @@ edit→prefrences→Preview，Automatic after □ milliseconds，□中输入500
 注：若安装不成功，卸掉重新安装mathtype即可。
 
 ```{r fig12,eval=T, echo=F,fig.cap="Mathtype安装",dev="png",results='markup', cache=F}
-knitr::include_graphics(".\\results\\Mathtype.png")
+knitr::include_graphics("./results/Mathtype.png")
 ```
 
 # Rstudio生成bookdown pdf步骤
@@ -527,13 +527,13 @@ knitr::include_graphics(".\\results\\Mathtype.png")
 2. site directory 要设置为 index.rmd 所在的文件夹，如图 \@ref(fig:fig13) 所示，设置好确认即可。
 
 ```{r fig13,eval=T, echo=F,fig.cap="Build Tools设置",dev="png",results='markup', cache=F}
-knitr::include_graphics(".\\results\\BuildTools.png")
+knitr::include_graphics("./results/BuildTools.png")
 ```
 
 3. 然后点击右上角的build按钮,点击Build Book，选择第二个，如图 \@ref(fig:fig14)即可生成pdf。
 
 ```{r fig14,eval=T, echo=F,fig.cap="bookdown选择",dev="png",results='markup', cache=F}
-knitr::include_graphics(".\\results\\bookdown.png")
+knitr::include_graphics("./results/bookdown.png")
 ```
 
 注意：出错后要删除gamm main.md 文件，再重新build.
