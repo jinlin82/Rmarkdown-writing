@@ -81,6 +81,24 @@
 \renewcommand{\citep}{\citen}
 % \renewcommand{\citep}{\nocite}   % 学校论文要求正文不出现引用样式
 
+%% ----------------------------- Footnote ---------------------------------
+%% 每页开始标号，用圆圈
+% \RequirePackage[perpage,symbol*]{footmisc}               % 支持带圈数字
+% % \DefineFNsymbols{circled}{{①}{②}{③}{④}{⑤}{⑥}{⑦}{⑧}{⑨}{⑩}}
+% \RequirePackage{pifont}                       % 支持带圈字符
+% \renewcommand\thefootnote{\ding{\numexpr171+\value{footnote}}}
+
+%% 全文统一编号，用数字
+\RequirePackage[flushmargin]{footmisc} % 注意:要在hyperref之前,否则生成的脚注没有引用,要配合 titling包一起使用, footnote 各种距离设置 
+\setlength{\footnotemargin}{0.5em}
+\RequirePackage{chngcntr}
+\counterwithout*{footnote}{chapter}
+
+%% 脚注 marker 和 text 之间加一个空格
+\let\myfootnote\footnote
+\renewcommand{\footnote}[1]{\myfootnote{~#1}}
+
+
 % -------------------Tools------------------------------------------------------
 \RequirePackage{graphicx}                           % 支持图形
 \RequirePackage{url}                                    % 对网址进行处理
@@ -93,17 +111,7 @@
 \setkeys{Gin}{width=0.8\textwidth}            % 更改Sweave默认图的宽度
 \RequirePackage{svn-multi}                    % 在文中加入svn属性信息
 
-%% ----------------------------- Footnote ---------------------------------
-%% 每页开始标号，用圆圈
-% \RequirePackage[perpage,symbol*]{footmisc}               % 支持带圈数字
-% % \DefineFNsymbols{circled}{{①}{②}{③}{④}{⑤}{⑥}{⑦}{⑧}{⑨}{⑩}}
-% \RequirePackage{pifont}                       % 支持带圈字符
-% \renewcommand\thefootnote{\ding{\numexpr171+\value{footnote}}}
 
-%% 全文统一编号，用数字
-\RequirePackage{footmisc}
-\RequirePackage{chngcntr}
-\counterwithout*{footnote}{chapter}
 
 % -------------------Math-------------------------------------------------
 \RequirePackage{amssymb}
@@ -685,6 +693,18 @@
 }
 % -------------------------------------------------------------------------------
 
+\renewcommand\footnotesize{%
+   \@setfontsize\footnotesize\@ixpt{11}%
+   \abovedisplayskip 8\p@ \@plus2\p@ \@minus4\p@
+   \abovedisplayshortskip \z@ \@plus\p@
+   \belowdisplayshortskip 4\p@ \@plus2\p@ \@minus2\p@
+   \def\@listi{\leftmargin\leftmargini
+               \topsep 4\p@ \@plus2\p@ \@minus2\p@
+               \parsep 2\p@ \@plus\p@ \@minus\p@
+               \itemsep \parsep}%
+   \belowdisplayskip \abovedisplayskip
+}
+
 
 % -----------------------------------段落----------------------------------------
 \setlength{\parindent}{2.0em}       % 段落缩进
@@ -706,7 +726,7 @@
 
   \list{\@biblabel{\@arabic\c@enumiv}}%
   {\renewcommand{\makelabel}[1]{##1\hfill}
-    \settowidth\labelwidth{1.1cm}
+    \settowidth\labelwidth{0cm}  %默认值为1.1cm，跟word比较宽
     \setlength{\labelsep}{0.4em}
     \setlength{\itemindent}{0pt}
     \setlength{\leftmargin}{\labelwidth+\labelsep}

@@ -31,6 +31,8 @@
 \renewcommand\figurename{图}
 \renewcommand{\today}{\number\year 年 \number\month 月 \number\day 日}
 
+\usepackage[flushmargin,hang]{footmisc}    % 注意:要在hyperref之前,否则生成的脚注没有引用,要配合 titling包一起使用, footnote 各种距离设置
+\setlength{\footnotemargin}{0em}
 \usepackage[dvipsnames]{xcolor}
 \PassOptionsToPackage{colorlinks=true,citecolor=blue, urlcolor=blue, linkcolor=violet, bookmarksdepth=4,bookmarksnumbered=true,bookmarksopen=true,bookmarksopenlevel=2}{hyperref}
 
@@ -61,6 +63,7 @@
 \usepackage{gbt7714}
 \usepackage{natbib}
 \setlength{\bibsep}{0.5pt}
+\usepackage{ragged2e}
 
 
 \usepackage[utf8]{inputenc}
@@ -180,7 +183,11 @@ $endif$
 \setcounter{secnumdepth}{4}
 
 %%% Change title format to be more compact
+%% 注意1:不能出现在 beamer-template中,否则footnote出现错误
+%% 注意2:对titling.sty 进行了hack
 \usepackage{titling}
+\setlength{\thanksmarkwidth}{5pt}
+\setlength{\thanksmargin}{0em}
 
 % Create subtitle command for use in maketitle
 \newcommand{\subtitle}[1]{
@@ -192,7 +199,7 @@ $endif$
 \setlength{\droptitle}{-2em}
 
 $if(title)$
-  \title{\LARGE\textbf{$title$}}
+  \title{\LARGE\textbf{$title$$if(thanks)$\thanks{$thanks$}$endif$}}
   \pretitle{\vspace{\droptitle}\centering\huge}
   \posttitle{\par}
 $else$

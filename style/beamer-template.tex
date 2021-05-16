@@ -252,10 +252,6 @@ $if(date)$
 \date{$date$}
 $endif$
 
-
-
-
-
 \renewcommand{\contentsname}{\centerline{\textcolor{violet}{目 \ \ 录}}}    % 将Contents改为目录
 \renewcommand{\abstractname}{摘 \ \ 要}      % 将Abstract改为摘要
 \renewcommand{\refname}{参考文献}            % 将Reference改为参考文献
@@ -269,7 +265,7 @@ $endif$
 \usepackage{lscape}
 \usepackage{indentfirst}
 \usepackage{textcomp}                      % provide many text symbols
-\usepackage{setspace}                      % 各种间距设置
+% \usepackage{setspace}                    % 各种间距设置 %% 不能出现在 beamer-template中,否则footnote出现错误
 
 
 % ---------------------------------Table------------------------------
@@ -380,7 +376,7 @@ $endif$
 
 
 $if(title)$
-\title{$title$}
+\title{$title$$if(thanks)$\thanks{$thanks$}$endif$}
 $endif$
 $if(subtitle)$
 \subtitle{$subtitle$}
